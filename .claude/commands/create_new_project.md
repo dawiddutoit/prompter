@@ -78,6 +78,7 @@ A complete project at `/Users/dawiddutoit/projects/play/{PROJECT_NAME}/` with ev
 
 ### Phase 3: AI Agent Creation
 - [ ] Create planner.md agent with project-specific context
+- [ ] Generate project.plan.md using the planner agent
 - [ ] Generate specialized development agents based on project type:
   - [ ] Frontend developer (if applicable)
   - [ ] Backend developer (if applicable) 
@@ -288,11 +289,33 @@ Creates project foundations with directory structure, configuration files, and s
 3. **Directory Creation**: Set up complete project structure at `/Users/dawiddutoit/projects/play/{PROJECT_NAME}`
 4. **Project Idea Documentation**: Generate project.idea.md with user requirements and vision
 5. **Agent Generation**: Create specialized AI agents tailored to the project
-6. **Git Repository Setup**: Initialize git with initial commit
-7. **Documentation**: Generate README with clear next steps
-8. **Completion Guidance**: Provide specific next commands to run
+6. **Project Plan Generation**: Use planner agent to create project.plan.md from project.idea.md
+7. **Git Repository Setup**: Initialize git with initial commit
+8. **Documentation**: Generate README with clear next steps
+9. **Completion Guidance**: Provide specific next commands to run
 
 **Key Output**: Complete project with specialized AI agents ready for development at `/Users/dawiddutoit/projects/play/{PROJECT_NAME}`
+
+## Critical Implementation Notes
+
+### Creating project.plan.md During Project Setup
+
+**IMPORTANT**: Every new project MUST include both project.idea.md AND project.plan.md files. Here's the process:
+
+1. **Create project.idea.md** - Capture user requirements and vision
+2. **Generate planner agent** - Use the composer to create .claude/commands/planner.md:
+   ```bash
+   .claude/commands/system/compose.md --config archetypes/planner.yaml --output {PROJECT_DIR}/.claude/commands/planner.md --project-root {PROJECT_DIR}
+   ```
+3. **Execute planner agent** - Run the planner to generate project.plan.md:
+   ```bash
+   cd {PROJECT_DIR} && .claude/commands/planner.md
+   ```
+4. **Verify project.plan.md exists** - Ensure the file was created in the project root
+
+This ensures that every new project has both:
+- **project.idea.md**: User requirements and vision
+- **project.plan.md**: Technical configuration and architecture decisions
 
 ## Project Templates
 
@@ -402,6 +425,7 @@ technology_defaults:
 ├── docs/                   # Project documentation
 ├── tests/                  # Test files
 ├── project.idea.md         # Project vision and requirements
+├── project.plan.md         # Technical project plan and configuration
 ├── CLAUDE.md              # Project-specific AI instructions
 ├── package.json           # Dependencies and scripts
 ├── vite.config.js         # Build configuration
@@ -420,6 +444,7 @@ technology_defaults:
 ├── infrastructure/         # Deployment configs
 ├── docs/                   # API documentation
 ├── project.idea.md         # Project requirements
+├── project.plan.md         # Technical project plan and configuration
 ├── CLAUDE.md              # Project instructions
 ├── package.json           # Node.js dependencies
 ├── requirements.txt       # Python dependencies (if Python)
@@ -438,6 +463,7 @@ technology_defaults:
 ├── compliance/             # Compliance artifacts
 ├── tests/                  # Test suites
 ├── project.idea.md         # Business requirements
+├── project.plan.md         # Technical project plan and configuration
 ├── CLAUDE.md              # Enterprise project context
 └── README.md              # Enterprise setup guide
 ```

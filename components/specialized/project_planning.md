@@ -46,7 +46,7 @@ Before beginning formal planning, check for existing project context and pre-def
 5. **Stakeholder Validation**: Confirm project.idea.md accurately represents current project vision
 
 #### Project Plan Generation Workflow
-1. **Template Selection**: Use project.plan.md as the foundation structure
+1. **Template Selection**: Use components/project/project.plan.md as the foundation structure
 2. **Information Synthesis**: Combine project.idea.md context with technical analysis and architectural decisions
 3. **Configuration Definition**: Establish environment setup, dependencies, and technical configuration
 4. **Directory Structure Design**: Plan project organization and file layout based on project type and requirements
