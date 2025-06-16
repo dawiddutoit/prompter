@@ -11,7 +11,7 @@ This project implements a modular prompt composition system for AI agents. Inste
 - **Role-Specific Components** (`components/meta/`): Unique patterns for specific agent types
 
 ### Composition Process
-1. **Configuration** - Define agent requirements in YAML composition files
+1. **Configuration** - Define agent requirements in YAML archetype files
 2. **Assembly** - Use Composer meta-agent to merge components into complete prompts
 3. **Validation** - Use Validator meta-agent to ensure quality and completeness
 4. **Deployment** - Generated prompts ready for use in `.claude/commands/`
@@ -39,8 +39,8 @@ This project implements a modular prompt composition system for AI agents. Inste
 ### Composer
 Use to generate agent prompts from component configurations:
 ```bash
-# Generate architect prompt from composition config
-.claude/commands/composer.md --config compositions/architect.yaml --output .claude/commands/architect.md
+# Generate architect prompt from archetype config
+.claude/commands/composer.md --config archetypes/architect.yaml --output .claude/commands/architect.md
 ```
 
 ### Extractor  
@@ -53,8 +53,8 @@ Use to analyze existing monolithic prompts and extract reusable components:
 ### Validator
 Use to ensure component and prompt quality:
 ```bash
-# Validate all components and compositions
-.claude/commands/validator.md --components components/ --compositions compositions/
+# Validate all components and archetypes
+.claude/commands/validator.md --components components/ --archetypes archetypes/
 ```
 
 ### Initializer
@@ -82,7 +82,7 @@ Use to set up new projects with modular prompt system:
 
 ### Adding New Agent Role
 1. Identify required components (core + specialized + role-specific)
-2. Create composition configuration file
+2. Create archetype configuration file
 3. Generate prompt using Composer
 4. Validate using Validator
 5. Test functionality and iterate
@@ -95,7 +95,7 @@ Use to set up new projects with modular prompt system:
 5. Test affected agents
 
 ### Maintaining System Quality
-- Regular validation runs on all components and compositions
+- Regular validation runs on all components and archetypes
 - Component impact analysis before modifications
 - Systematic regeneration of prompts after core component changes
 - Quality metrics tracking (duplication reduction, consistency scores)
@@ -111,7 +111,7 @@ Use to set up new projects with modular prompt system:
 
 ### File Management
 - **Components**: The source of truth for all prompt content
-- **Compositions**: Configuration files defining how components assemble
+- **Archetypes**: Configuration files defining how components assemble
 - **Generated Prompts**: Output files, should not be manually edited
 - **Examples**: Reference implementations and validation cases
 

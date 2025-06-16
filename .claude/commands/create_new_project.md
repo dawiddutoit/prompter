@@ -1,5 +1,152 @@
 # Create New Project
 
+## Argument Processing
+
+When called with command-line arguments, process them immediately:
+
+```bash
+# Parse arguments and create project directly
+--template <template_name>   # web_app, api_service, slack_app, enterprise
+--name <project_name>        # Project name (required)
+--frontend <framework>       # Vite, React, Vue, Angular (default: Vite for web_app)
+--backend <framework>        # Node.js, Python, Java (default: Node.js)
+--database <system>          # PostgreSQL, MongoDB, MySQL (default: PostgreSQL)
+--deployment <platform>      # Local, AWS, Azure, GCP (default: Local)
+```
+
+**If arguments are provided**: Create project immediately using the specifications.
+**If no arguments**: Enter interactive mode to gather requirements.
+
+### For Your Home Automation Project:
+- Template: web_app (frontend + backend)
+- Frontend: Vite (modern build tool, fast development)
+- Backend: Node.js (for local automation APIs)
+- Database: SQLite (perfect for local hosting)
+- Deployment: Local (self-hosted automation hub)
+
+## Argument Processing Logic
+
+**Step 1: Parse provided arguments**
+```
+Detected arguments:
+✅ --template web_app
+✅ --name "home-automation-site"
+
+Pre-filled configuration:
+- Project Name: home-automation-site
+- Template: Web Application (frontend + backend)
+- Location: /Users/dawiddutoit/projects/play/home-automation-site
+```
+
+**Step 2: Apply template defaults for web_app**
+```
+Default technology stack for web_app:
+- Frontend: Vite (modern, fast development)
+- Backend: Node.js 
+- Database: SQLite (perfect for local projects)
+- Deployment: Local hosting
+```
+
+**Step 3: Offer customization opportunity**
+```
+🎯 Project: home-automation-site (Web Application)
+📍 Location: /Users/dawiddutoit/projects/play/home-automation-site
+
+Current configuration:
+✅ Template: web_app (Web Application)
+✅ Frontend: Vite + React
+✅ Backend: Node.js
+✅ Database: SQLite  
+✅ Deployment: Local hosting
+
+Would you like to:
+1. ✅ Proceed with these settings (recommended for home automation)
+2. 🔧 Customize technology stack (frontend/backend/database)
+3. 📋 Add specific requirements or features
+
+Enter 1 to proceed, 2 to customize, or 3 to add requirements:
+```
+
+**Step 4: If user chooses to proceed (option 1)**
+Create the project immediately with the configuration above.
+
+**Step 5: If user chooses to customize (option 2)**
+Present technology options while keeping the template and name.
+
+**Step 6: If user chooses to add requirements (option 3)**
+Ask for specific home automation features, integrations, etc.
+
+## Example User Flows
+
+### Flow A: User chooses "1 - Proceed" 
+```
+✅ Creating home-automation-site with default web_app settings...
+
+📁 Project Structure Created:
+/Users/dawiddutoit/projects/play/home-automation-site/
+├── src/ (Vite + React frontend)
+├── backend/ (Node.js APIs)
+├── docs/
+├── tests/
+└── .claude/commands/ (AI agents)
+
+🤖 AI Agents Generated:
+- planner.md (home automation planning)
+- frontend_developer.md (Vite/React dashboard)  
+- backend_developer.md (Node.js automation APIs)
+- devops_engineer.md (local hosting setup)
+
+🚀 Next Steps:
+cd /Users/dawiddutoit/projects/play/home-automation-site
+.claude/commands/planner.md
+```
+
+### Flow B: User chooses "2 - Customize"
+```
+🔧 Customize Technology Stack:
+
+Frontend Options:
+1. Vite + React (recommended for dashboards)
+2. Vite + Vue (lightweight, reactive)
+3. Next.js (if you need SSR)
+4. Svelte (ultra-fast, small bundle)
+
+Backend Options:
+1. Node.js (JavaScript, great for IoT)
+2. Python Flask (if using ML/AI features)
+3. Python FastAPI (modern, fast APIs)
+
+Database Options:
+1. SQLite (local, lightweight)
+2. PostgreSQL (if scaling up)
+3. InfluxDB (for time-series sensor data)
+
+Choose your preferences...
+```
+
+### Flow C: User chooses "3 - Add Requirements"
+```
+📋 Home Automation Requirements:
+
+What will your system control/monitor?
+□ Smart lights (Philips Hue, LIFX)
+□ Climate control (thermostats, HVAC) 
+□ Security (cameras, sensors, alarms)
+□ Media systems (Sonos, TV, streaming)
+□ Appliances (smart plugs, switches)
+□ Energy monitoring (solar, usage tracking)
+□ Voice control (Alexa, Google Assistant)
+□ Mobile notifications and remote access
+
+Integration preferences:
+□ Home Assistant integration
+□ MQTT broker for device communication
+□ REST APIs for external services
+□ Webhook support for notifications
+
+Select your requirements to customize the agents...
+```
+
 ## Role
 Creates complete new projects with directory structure, configuration, and project-specific AI agents tailored to your technology stack and requirements.
 
@@ -51,10 +198,10 @@ project_structure:
   - tests/
   - infrastructure/
 technology_defaults:
-  frontend: "React"
+  frontend: "Vite"  # Modern build tool, fast development
   backend: "Node.js"
-  database: "PostgreSQL"
-  deployment: "AWS"
+  database: "SQLite"  # Perfect for local projects
+  deployment: "Local"  # Self-hosted by default
 ```
 
 ### API-First Project
