@@ -1,0 +1,64 @@
+# Dreamwork Project Extraction Example
+
+## Purpose
+Demonstrates extracting components from the existing Dreamwork project prompts to validate the modular approach.
+
+## Source Analysis
+```yaml
+source_project: "/Users/dawiddutoit/projects/play/dreamwork"
+source_prompts:
+  - ".claude/commands/architect.md"
+  - ".claude/commands/developer.md"  
+  - ".claude/commands/researcher.md"
+  - ".claude/commands/reviewer.md"
+  - ".claude/commands/tester.md"
+
+extraction_targets:
+  core_components:
+    - thinking.md (from thinking tool guidance)
+    - mcp_tools.md (from document discovery patterns)
+    - document_creation.md (from audience headers)
+    - tool_usage.md (from permission guidelines)
+  
+  specialized_components:
+    - architecture_patterns.md (from architect workflows)
+    - development_workflows.md (from developer patterns)
+    - research_methodologies.md (from researcher approaches)
+    - quality_standards.md (from reviewer criteria)
+    - testing_strategies.md (from tester protocols)
+```
+
+## Extracted Parameters
+```yaml
+parameters:
+  PROJECT_ROOT: "/Users/dawiddutoit/projects/play/dreamwork"
+  AGENT_NAME: "{{ROLE_NAME}}"
+  
+  # Document types by role
+  ARCHITECT_DOCS: "ADR, System Design, Technical Specification"
+  DEVELOPER_DOCS: "Implementation Guide, Setup Guide, Code Documentation"
+  RESEARCHER_DOCS: "Technology Evaluation, Analysis Report, Recommendation"
+  REVIEWER_DOCS: "Code Review, Quality Assessment, Standards Compliance"
+  TESTER_DOCS: "Test Plan, Quality Validation, Test Results"
+  
+  # Audience mappings
+  ARCHITECT_AUDIENCE: "Developer, Researcher"
+  DEVELOPER_AUDIENCE: "All Agents"
+  RESEARCHER_AUDIENCE: "Architect, Developer"  
+  REVIEWER_AUDIENCE: "Developer, Architect"
+  TESTER_AUDIENCE: "Developer, Reviewer"
+```
+
+## Validation Strategy
+1. **Extract** components from existing Dreamwork prompts
+2. **Compose** new agent prompts using modular system
+3. **Compare** functionality between original and composed versions
+4. **Validate** that no capabilities are lost in translation
+5. **Measure** reduction in duplication and maintenance overhead
+
+## Expected Outcomes
+- **Duplication Reduction**: From 60-70% to <20%
+- **Maintenance Efficiency**: Single component updates vs. 5 file updates
+- **Consistency**: Guaranteed identical patterns across agents
+- **Extensibility**: Easy addition of new agent roles
+- **Quality**: Improved validation and standards compliance
