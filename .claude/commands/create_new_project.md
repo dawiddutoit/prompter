@@ -58,23 +58,17 @@ A complete project at `/Users/dawiddutoit/projects/play/{PROJECT_NAME}/` with ev
 ### Phase 2: Project Foundation Setup  
 - [ ] Create main project directory at `/Users/dawiddutoit/projects/play/{PROJECT_NAME}/`
 - [ ] Create `.claude/commands/` directory for AI agents
-- [ ] Create tech-stack-specific project directories based on template:
-  - [ ] Web App: src/, public/, docs/, tests/
-  - [ ] API Service: api/, src/, docs/, tests/, infrastructure/
-  - [ ] Node.js: src/, tests/, config/
-  - [ ] Python: src/, tests/, requirements.txt or pyproject.toml
-  - [ ] React/Vue: src/components/, src/pages/, public/
-  - [ ] Enterprise: frontend/, backend/, infrastructure/, security/, docs/
+- [ ] Create appropriate project directories based on technology stack and best practices
 - [ ] Generate project.idea.md with user requirements and vision
 - [ ] Create CLAUDE.md with project-specific instructions and context
-- [ ] Create tech-stack-appropriate configuration files:
-  - [ ] Node.js: package.json with appropriate dependencies
-  - [ ] Python: requirements.txt or pyproject.toml
-  - [ ] Frontend: vite.config.js, tailwind.config.js, etc.
-  - [ ] Docker: Dockerfile and docker-compose.yml if needed
-- [ ] Generate .env.example with required environment variables for tech stack
-- [ ] Create tech-stack-specific .gitignore (Node.js, Python, React, etc.)
-- [ ] Generate comprehensive README.md with setup instructions for chosen stack
+- [ ] Create appropriate configuration files for the chosen technology stack
+- [ ] Generate .gitignore file with tech-stack-specific exclusions
+- [ ] Generate comprehensive README.md with project description and setup instructions
+
+### Phase 2.5: MCP Infrastructure Reference
+- [ ] Add MCP management reference to project CLAUDE.md
+- [ ] Include MCP troubleshooting instructions in README.md
+- [ ] Ensure user knows where to find MCP management tools (~/play/mcp_management/)
 
 ### Phase 3: AI Agent Creation
 - [ ] Create planner.md agent with project-specific context
@@ -192,14 +186,7 @@ Ask for specific home automation features, integrations, etc.
 ✅ Foundation created for home-automation-site project!
 
 📁 Project Foundation:
-/Users/dawiddutoit/projects/play/home-automation-site/
-├── src/ (ready for Vite + React)
-├── backend/ (ready for Node.js)
-├── docs/ (documentation templates)
-├── tests/ (testing framework setup)
-├── package.json (Vite + dependencies configured)
-├── README.md (project overview + next steps)
-└── .claude/commands/ (specialized AI agents)
+Complete project structure created at /Users/dawiddutoit/projects/play/home-automation-site/ with all necessary directories, configuration files, and specialized AI agents ready for development.
 
 🤖 Specialized AI Agents Ready:
 - planner.md (understands home automation requirements)
@@ -328,11 +315,7 @@ recommended_agents:
   development: ["frontend_developer", "backend_developer"]
   operations: ["devops_engineer"]
   optional: ["security_engineer"]
-project_structure:
-  - src/
-  - docs/
-  - tests/
-  - infrastructure/
+# Project structure created based on template and best practices
 technology_defaults:
   frontend: "Vite"  # Modern build tool, fast development
   backend: "Node.js"
@@ -349,11 +332,7 @@ recommended_agents:
   development: ["backend_developer"]
   operations: ["devops_engineer"]
   optional: ["security_engineer", "frontend_developer"]
-project_structure:
-  - api/
-  - docs/
-  - tests/
-  - infrastructure/
+# Project structure created based on template and best practices
 technology_defaults:
   backend: "Node.js"
   database: "PostgreSQL"
@@ -368,11 +347,7 @@ recommended_agents:
   core: ["planner"]
   development: ["slack_developer", "backend_developer"]
   optional: ["security_engineer", "devops_engineer"]
-project_structure:
-  - src/
-  - manifests/
-  - docs/
-  - tests/
+# Project structure created based on template and best practices
 technology_defaults:
   platform: "Slack Bolt Framework"
   backend: "Node.js"
@@ -388,13 +363,7 @@ recommended_agents:
   development: ["frontend_developer", "backend_developer"]
   operations: ["devops_engineer", "security_engineer"]
   optional: []
-project_structure:
-  - frontend/
-  - backend/
-  - infrastructure/
-  - security/
-  - docs/
-  - compliance/
+# Project structure created based on template and best practices
 technology_defaults:
   frontend: "React"
   backend: "Node.js"
@@ -405,68 +374,8 @@ technology_defaults:
 
 ## Generated Project Structure
 
-**Note**: Project structure adapts to chosen technology stack and template type.
 
-### Web Application (Node.js + React/Vue)
-```
-/Users/dawiddutoit/projects/play/{PROJECT_NAME}/
-├── .claude/
-│   └── commands/           # Project-specific AI agents
-│       ├── planner.md
-│       ├── frontend_developer.md
-│       ├── backend_developer.md
-│       └── devops_engineer.md
-├── src/                    # Frontend source code
-│   ├── components/
-│   ├── pages/
-│   └── utils/
-├── backend/                # Backend API code
-├── public/                 # Static assets
-├── docs/                   # Project documentation
-├── tests/                  # Test files
-├── project.idea.md         # Project vision and requirements
-├── project.plan.md         # Technical project plan and configuration
-├── CLAUDE.md              # Project-specific AI instructions
-├── package.json           # Dependencies and scripts
-├── vite.config.js         # Build configuration
-├── .env.example           # Environment variables template
-├── README.md              # Setup guide + next steps
-└── .gitignore             # Tech-stack-specific ignores
-```
-
-### API Service (Node.js/Python)
-```
-/Users/dawiddutoit/projects/play/{PROJECT_NAME}/
-├── .claude/commands/       # AI agents (planner, backend_developer, devops_engineer)
-├── api/                    # API endpoints and routes
-├── src/                    # Core application logic
-├── tests/                  # Test files
-├── infrastructure/         # Deployment configs
-├── docs/                   # API documentation
-├── project.idea.md         # Project requirements
-├── project.plan.md         # Technical project plan and configuration
-├── CLAUDE.md              # Project instructions
-├── package.json           # Node.js dependencies
-├── requirements.txt       # Python dependencies (if Python)
-└── README.md              # Setup instructions
-```
-
-### Enterprise Application
-```
-/Users/dawiddutoit/projects/play/{PROJECT_NAME}/
-├── .claude/commands/       # Full agent team
-├── frontend/               # Client application
-├── backend/                # Server application  
-├── infrastructure/         # DevOps and deployment
-├── security/               # Security configurations
-├── docs/                   # Comprehensive documentation
-├── compliance/             # Compliance artifacts
-├── tests/                  # Test suites
-├── project.idea.md         # Business requirements
-├── project.plan.md         # Technical project plan and configuration
-├── CLAUDE.md              # Enterprise project context
-└── README.md              # Enterprise setup guide
-```
+Project structure will be created automatically based on the chosen template and technology stack, following industry best practices for the selected frameworks and platforms.
 
 ## Project Configuration Format
 ```yaml
@@ -567,84 +476,14 @@ cd /Users/dawiddutoit/projects/play/blog-platform
 ```
 
 ## Generated README Template
-```markdown
-# {PROJECT_NAME}
 
-## Project Status: Initialized ✅
-
-Your project structure has been created successfully!
-
-## Next Step: Select Your Development Agents
-
-Run the following command to choose which AI agents you need for your project:
-
-```bash
-.claude/commands/agent_selector.md --interactive
-```
-
-This will analyze your project and help you select the right combination of agents for:
-- Project planning and architecture
-- {Frontend/Backend} development  
-- DevOps and deployment
-- Security and testing
-
-## Project Structure
-
-- `src/` - Your application source code
-- `docs/` - Project documentation
-- `tests/` - Test files
-- `.claude/` - AI agent configurations (populated after agent selection)
-
-## After Agent Selection
-
-Once you've selected your agents, you'll have specialized AI assistants ready to help with:
-- Requirements analysis and planning
-- Code implementation and review
-- Infrastructure setup and deployment
-- Security assessment and testing
-
-Start with: `.claude/commands/planner.md` (available after agent selection)
-```
+Use the template at `templates/README.template.md` to generate the project README file.
 
 ## Completion Message Template
 
 When project creation is complete, provide this exact message to the user if needed.
 
-```markdown
-✅ Project foundation for "{PROJECT_NAME}" created successfully!
-
-📁 Foundation Created:
-- Project structure ready for development (src/, docs/, tests/)
-- Configuration files (package.json, etc.) with your tech stack
-- Git repository initialized with initial commit  
-- Specialized AI agents configured for your project type
-- Documentation templates and README with next steps
-
-🎯 Your Specialized AI Development Team:
-- planner.md - Understands your {PROJECT_TYPE} requirements
-- frontend_developer.md - Configured for {FRONTEND_TECH} development
-- backend_developer.md - Set up for {BACKEND_TECH} APIs and services
-- devops_engineer.md - Knows your deployment preferences
-- [additional agents based on your template]
-
-🚀 Start Building Your Application:
-1. Navigate to your project:
-   cd /Users/dawiddutoit/projects/play/{PROJECT_NAME}
-
-2. Begin with requirements and planning:
-   .claude/commands/planner.md
-
-3. Your agents will build the actual application:
-   .claude/commands/frontend_developer.md
-   .claude/commands/backend_developer.md
-
-📚 Project Foundation:
-- Template: {TEMPLATE}
-- Tech Stack: {TECH_STACK}
-- Location: /Users/dawiddutoit/projects/play/{PROJECT_NAME}
-
-Your foundation is ready - let your AI agents build the application!
-```
+Use the template at `templates/message.completion.template.md` to generate the project completion message.
 
 **Important**: Always end with clear next commands for the user to run.
 
@@ -698,39 +537,7 @@ This initializer ensures users always know their next step and creates a smooth 
 
 ### Project Idea Template
 
-When creating a new project, always generate a `project.idea.md` file using this template structure, filling in details based on the user's request:
-
-```markdown
-# {PROJECT_NAME}
-
-## What are you building?
-<!-- Describe the project in 1-2 sentences based on user requirements -->
-
-## Why does this project matter?
-<!-- What problem does it solve? Who benefits? -->
-
-## What should it do?
-<!-- List the main features/capabilities based on user request -->
-- 
-- 
-- 
-
-## Any technical preferences?
-<!-- Fill in based on template and user specifications -->
-- Programming language: {BACKEND_LANGUAGE}
-- Framework/Platform: {FRONTEND_FRAMEWORK} + {BACKEND_FRAMEWORK}
-- Database: {DATABASE_CHOICE}
-- Hosting/Deployment: {DEPLOYMENT_PLATFORM}
-
-## How will you know it's successful?
-<!-- Define concrete success criteria based on requirements -->
-- 
-- 
-- 
-
-## Anything else important?
-<!-- Special considerations, constraints, or context -->
-```
+When creating a new project, always generate a `project.idea.md` file using the template at `templates/project.idea.template.md`, filling in details based on the user's request.
 
 ### Content Generation Strategy
 

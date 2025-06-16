@@ -115,4 +115,34 @@ Use to set up new projects with modular prompt system:
 - **Generated Prompts**: Output files, should not be manually edited
 - **Examples**: Reference implementations and validation cases
 
+### MCP Server Management
+
+If MCP servers are not available or need to be configured, use the dedicated MCP management project:
+
+```bash
+# Navigate to MCP management tools
+cd ~/play/mcp_management/
+
+# Setup all MCP servers (run once per system)
+./setup-mcp.sh setup
+
+# Check current configuration
+./setup-mcp.sh list
+
+# Verify server status
+./setup-mcp.sh status
+```
+
+The MCP management project at `~/play/mcp_management/` provides comprehensive tools for setting up and maintaining MCP servers across all projects.
+
 This modular approach transforms prompt engineering from manual duplication management into systematic component-based development.
+
+## 🗺️ System Navigation (Essential Reading)
+
+**For anyone working on the prompter system itself**, start here:
+- **System Architecture Guide**: `components/core/prompter_system_navigation.md`
+- **Anti-Decay Protocols**: Prevents system confusion as it grows
+- **Component Navigation**: Understand how pieces fit together
+- **Development Workflows**: How to modify and extend prompter
+
+This navigation guide is **essential reading** to prevent stochastic decay and maintain system coherence as prompter evolves.

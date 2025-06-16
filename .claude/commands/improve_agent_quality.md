@@ -26,6 +26,7 @@ This command helps you:
 - **Integration Validation**: Ensure agents work together properly
 - **Project Validation**: Check entire project setup quality
 - **System Validation**: Validate prompter system health
+- **Navigation Validation**: Verify system navigation and anti-decay protocols work
 
 ## Validation Categories
 
@@ -243,6 +244,18 @@ quality_assessment:
 - Standardize validation patterns
 - Improve cross-agent integration
 - Update documentation standards
+```
+
+### System Navigation Validation
+```bash
+# Validate system navigation and anti-decay protocols
+.claude/commands/improve_agent_quality.md --check-navigation
+
+# Validates:
+- System navigation guide accessibility and currency
+- Anti-decay protocol effectiveness
+- Component discovery pattern functionality
+- System architecture documentation synchronization
 ```
 
 ## Advanced Quality Features

@@ -1,0 +1,71 @@
+# Prompter System Agent Composition Configuration
+# For agents that work ON the prompter system itself (not deployed to projects)
+
+agent_name: "prompter_system_agent"
+description: "Meta-agent for working on prompter system development and maintenance"
+output_path: ".claude/commands/system_developer.md"
+
+components:
+  core:
+    - thinking.md
+    - mcp_tools.md
+    - document_creation.md
+    - tool_usage.md
+    - agent_validation_checkpoints.md
+    - prompter_system_navigation.md  # CRITICAL: System navigation
+  meta:
+    - meta_developer.md         # System improvement and evolution
+    - interaction_history_analyzer.md # Usage pattern analysis
+  specialized:
+    - quality_standards.md
+    - research_methodologies.md
+
+parameters:
+  AGENT_NAME: "Prompter System Developer"
+  ROLE_DESCRIPTION: "System development, maintenance, and evolution for prompter framework"
+  
+  # Document types this agent creates
+  PRIMARY_DOCUMENTS: "Component Specifications, System Architecture, Enhancement Plans"
+  DOCUMENT_TYPES: "Component Enhancement, System Architecture, Quality Analysis, Usage Reports"
+  
+  # Primary audience for this agent's documents
+  PRIMARY_AUDIENCE: "Prompter System Developers, Framework Maintainers"
+  SECONDARY_AUDIENCE: "Advanced Users, Contributors"
+  
+  # Purpose statement for documents
+  PURPOSE_STATEMENT: "Enable prompter system improvement, maintenance, and evolution"
+  
+  # Typical action items this agent provides
+  ACTION_ITEMS: "Component enhancement, system optimization, quality improvement, architecture evolution"
+  
+  # System-specific parameters
+  PROJECT_ROOT: "/Users/dawiddutoit/projects/play/prompter"
+  SYSTEM_TYPE: "Prompt Composition Framework"
+  
+  # Validation requirements
+  VALIDATION_LEVEL: "Critical"
+  VALIDATION_CHECKPOINTS: "System navigation validation, component integrity, anti-decay protocol verification"
+  
+  # Document discovery patterns for prompter system
+  DISCOVERY_PATTERNS: |
+    mcp__filesystem__directory_tree(path="/prompter/components")
+    mcp__filesystem__search_files(path="/prompter/components", pattern="*.md")
+    mcp__filesystem__search_files(path="/prompter/archetypes", pattern="*.yaml")
+    mcp__filesystem__directory_tree(path="/prompter/.claude/commands")
+    mcp__filesystem__read_file(path="/prompter/CLAUDE.md")
+    mcp__filesystem__read_file(path="/prompter/components/core/prompter_system_navigation.md")
+
+validation_rules:
+  required_sections:
+    - "## System Navigation Integration"
+    - "## Component Enhancement Workflow"
+    - "## Anti-Decay Protocol Validation"
+    - "## System Architecture Understanding" 
+    - "## Quality Evolution Framework"
+  quality_standards:
+    - "Must reference prompter_system_navigation.md for system understanding"
+    - "Must use meta_developer.md for system improvements"
+    - "Must validate changes don't break composition process"
+    - "Must maintain backward compatibility"
+    - "Must follow anti-decay protocols"
+    - "Must contribute to system coherence and evolution"

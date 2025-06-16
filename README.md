@@ -35,6 +35,12 @@ cd /Users/dawiddutoit/projects/play/my-shop
 .claude/commands/prompter.md
 ```
 
+### Working on Prompter Itself?
+```bash
+# System navigation and architecture guide
+components/core/prompter_system_navigation.md
+```
+
 ## Available Project Types
 
 | Template | Description | AI Agents Generated |
@@ -50,6 +56,7 @@ After running a command, you'll have:
 
 - **Complete project structure** (src/, docs/, tests/)
 - **Specialized AI agents** that understand your specific project
+- **MCP server references** for enhanced development capabilities
 - **Git repository** with initial commit
 - **Documentation** with clear next steps
 
@@ -100,6 +107,14 @@ cd /Users/dawiddutoit/projects/play/team-bot
 .claude/commands/create_new_project.md --template web_app --name "vue-app" --frontend Vue --backend Python
 cd /Users/dawiddutoit/projects/play/vue-app
 .claude/commands/frontend_developer.md  # Now knows Vue.js instead of React
+```
+
+## MCP Server Setup
+
+If you need to set up or troubleshoot MCP servers, use the dedicated management project:
+
+```bash
+cd ~/play/mcp_management/ && ./setup-mcp.sh
 ```
 
 ## That's It

@@ -76,7 +76,8 @@
       "mcp__filesystem__read_multiple_files",
       "mcp__filesystem__create_directory",
       "mcp__filesystem__edit_file",
-      "Bash(.claude/commands/composer.md:*)"
+      "Bash(.claude/commands/composer.md:*)",
+      "Bash(claude mcp remove:*)"
     ],
     "deny": [
       "Bash(rm -rf*)",

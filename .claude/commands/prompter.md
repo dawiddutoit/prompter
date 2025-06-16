@@ -46,9 +46,15 @@ No guessing, no confusion - just clear next steps every time.
    - Interaction history analysis
    - **Best for**: Prompter system development and research
 
+**6. 🗺️ System navigation guide**
+   - Understand prompter system architecture
+   - Navigate components, archetypes, and agents
+   - Anti-decay protocols and quality maintenance
+   - **Best for**: Understanding how prompter works internally
+
 ---
 
-## Choose an option (1-5):
+## Choose an option (1-6):
 
 ### Option 1: Create New Project
 If you want to **start a new project from scratch**, choose this option. You'll get:
@@ -90,6 +96,15 @@ If you're working on the **prompter system itself** or need advanced features, c
 - Interaction pattern analysis
 
 **Commands**: See `.claude/commands/system/` directory
+
+### Option 6: System Navigation Guide
+If you want to **understand how prompter works internally**, choose this option. You'll get:
+- Complete system architecture overview
+- Component and archetype navigation
+- Anti-decay protocols and maintenance
+- Development workflows for prompter itself
+
+**Reference**: Read `components/core/prompter_system_navigation.md`
 
 ---
 
