@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "project": {
+    "name": "Prompter",
+    "description": "Modular Prompt Composition System",
+    "type": "prompt_engineering"
+  },
+  "composition": {
+    "components_path": "components/",
+    "compositions_path": "compositions/",
+    "output_path": ".claude/commands/",
+    "validation_enabled": true
+  },
+  "meta_agents": {
+    "composer": "tools/composer.md",
+    "extractor": "tools/extractor.md", 
+    "validator": "tools/validator.md",
+    "initializer": "tools/initializer.md"
+  },
+  "quality_standards": {
+    "component_validation": true,
+    "assembly_validation": true,
+    "duplication_threshold": 0.20,
+    "completeness_threshold": 0.95
+  },
+  "examples": {
+    "dreamwork_case_study": "examples/dreamwork_extraction.yaml"
+  }
+}

@@ -23,6 +23,7 @@ When using the think tool:
 3. Check for gaps in information and plan how to fill them 
 4. Evaluate multiple approaches before choosing one 
 5. Verify your reasoning for logical errors or biases
+6. Ensure you format the output correctly for the user's terminal so that it is easy to read and understand.
 ```
 
 ## Integration Points
