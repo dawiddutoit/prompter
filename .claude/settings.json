@@ -12,10 +12,10 @@
     "validation_enabled": true
   },
   "meta_agents": {
-    "composer": "tools/composer.md",
-    "extractor": "tools/extractor.md", 
-    "validator": "tools/validator.md",
-    "initializer": "tools/initializer.md"
+    "composer": ".claude/commands/composer.md",
+    "extractor": ".claude/commands/extractor.md", 
+    "validator": ".claude/commands/validator.md",
+    "initializer": ".claude/commands/initializer.md"
   },
   "quality_standards": {
     "component_validation": true,

@@ -40,28 +40,28 @@ This project implements a modular prompt composition system for AI agents. Inste
 Use to generate agent prompts from component configurations:
 ```bash
 # Generate architect prompt from composition config
-tools/composer.md --config compositions/architect.yaml --output .claude/commands/architect.md
+.claude/commands/composer.md --config compositions/architect.yaml --output .claude/commands/architect.md
 ```
 
 ### Extractor  
 Use to analyze existing monolithic prompts and extract reusable components:
 ```bash
 # Extract components from existing project
-tools/extractor.md --source /path/to/existing/.claude/commands/ --output components/
+.claude/commands/extractor.md --source /path/to/existing/.claude/commands/ --output components/
 ```
 
 ### Validator
 Use to ensure component and prompt quality:
 ```bash
 # Validate all components and compositions
-tools/validator.md --components components/ --compositions compositions/
+.claude/commands/validator.md --components components/ --compositions compositions/
 ```
 
 ### Initializer
 Use to set up new projects with modular prompt system:
 ```bash
 # Initialize new project with modular prompts
-tools/initializer.md --template web_development --name "new_project"
+.claude/commands/initializer.md --template web_development --name "new_project"
 ```
 
 ## Quality Standards

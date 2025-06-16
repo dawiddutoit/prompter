@@ -22,14 +22,15 @@ Prompter provides a modular composition system that:
 
 ```
 prompter/
-├── components/           # Reusable prompt components
-│   ├── core/            # Universal components (thinking, tools, docs)
-│   ├── specialized/     # Domain-specific components  
-│   └── meta/            # Meta-agent components
-├── agents/              # Base agent definitions
-├── compositions/        # Agent composition configurations
-├── tools/               # Meta-agents (Composer, Extractor, etc.)
-└── examples/            # Usage examples and validation cases
+├── .claude/
+│   └── commands/        # Meta-agents (Composer, Extractor, Validator, Initializer)
+├── components/          # Reusable prompt components
+│   ├── core/           # Universal components (thinking, tools, docs)
+│   ├── specialized/    # Domain-specific components  
+│   └── meta/           # Meta-agent components
+├── agents/             # Base agent definitions
+├── compositions/       # Agent composition configurations
+└── examples/           # Usage examples and validation cases
 ```
 
 ## Core Components
@@ -51,7 +52,7 @@ prompter/
 ### 1. Extract from Existing Project
 ```bash
 # Analyze existing prompts and extract components
-tools/extractor.md --source .claude/commands/ --output components/
+.claude/commands/extractor.md --source .claude/commands/ --output components/
 ```
 
 ### 2. Compose New Agent
@@ -69,7 +70,7 @@ parameters:
 ### 3. Generate Agent Prompt
 ```bash
 # Compose final prompt from components
-tools/composer.md --config compositions/architect.yaml --output .claude/commands/architect.md
+.claude/commands/composer.md --config compositions/architect.yaml --output .claude/commands/architect.md
 ```
 
 ## Benefits
