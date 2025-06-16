@@ -80,25 +80,29 @@ Ask for specific home automation features, integrations, etc.
 
 ### Flow A: User chooses "1 - Proceed" 
 ```
-✅ Creating home-automation-site with default web_app settings...
+✅ Foundation created for home-automation-site project!
 
-📁 Project Structure Created:
+📁 Project Foundation:
 /Users/dawiddutoit/projects/play/home-automation-site/
-├── src/ (Vite + React frontend)
-├── backend/ (Node.js APIs)
-├── docs/
-├── tests/
-└── .claude/commands/ (AI agents)
+├── src/ (ready for Vite + React)
+├── backend/ (ready for Node.js)
+├── docs/ (documentation templates)
+├── tests/ (testing framework setup)
+├── package.json (Vite + dependencies configured)
+├── README.md (project overview + next steps)
+└── .claude/commands/ (specialized AI agents)
 
-🤖 AI Agents Generated:
-- planner.md (home automation planning)
-- frontend_developer.md (Vite/React dashboard)  
-- backend_developer.md (Node.js automation APIs)
-- devops_engineer.md (local hosting setup)
+🤖 Specialized AI Agents Ready:
+- planner.md (understands home automation requirements)
+- frontend_developer.md (configured for Vite/React dashboards)  
+- backend_developer.md (knows Node.js + IoT patterns)
+- devops_engineer.md (local hosting + deployment)
 
-🚀 Next Steps:
+🚀 Foundation Complete - Start Development:
 cd /Users/dawiddutoit/projects/play/home-automation-site
 .claude/commands/planner.md
+
+Your agents will build the actual application!
 ```
 
 ### Flow B: User chooses "2 - Customize"
@@ -148,7 +152,7 @@ Select your requirements to customize the agents...
 ```
 
 ## Role
-Creates complete new projects with directory structure, configuration, and project-specific AI agents tailored to your technology stack and requirements.
+Creates project foundations with directory structure, configuration files, and specialized AI agents tailored to your technology stack and requirements. The foundation is ready for development - the AI agents will build the actual application.
 
 ## Core Capabilities
 
@@ -427,38 +431,39 @@ Start with: `.claude/commands/planner.md` (available after agent selection)
 When project creation is complete, provide this exact message to the user if needed.
 
 ```markdown
-✅ Project "{PROJECT_NAME}" created successfully!
+✅ Project foundation for "{PROJECT_NAME}" created successfully!
 
-📁 Created:
-- Complete project structure (src/, docs/, tests/)
-- Git repository with initial commit  
-- Specialized AI agents in .claude/commands/
-- Project documentation and README
+📁 Foundation Created:
+- Project structure ready for development (src/, docs/, tests/)
+- Configuration files (package.json, etc.) with your tech stack
+- Git repository initialized with initial commit  
+- Specialized AI agents configured for your project type
+- Documentation templates and README with next steps
 
-🎯 Your AI Development Team:
-- planner.md - Project planning and requirements
-- frontend_developer.md - React/UI development (if web_app)
-- backend_developer.md - API and database development
-- devops_engineer.md - Infrastructure and deployment
-- [additional agents based on template]
+🎯 Your Specialized AI Development Team:
+- planner.md - Understands your {PROJECT_TYPE} requirements
+- frontend_developer.md - Configured for {FRONTEND_TECH} development
+- backend_developer.md - Set up for {BACKEND_TECH} APIs and services
+- devops_engineer.md - Knows your deployment preferences
+- [additional agents based on your template]
 
-🚀 Next Steps:
+🚀 Start Building Your Application:
 1. Navigate to your project:
    cd /Users/dawiddutoit/projects/play/{PROJECT_NAME}
 
-2. Start with planning:
+2. Begin with requirements and planning:
    .claude/commands/planner.md
 
-3. Then use other agents as needed:
+3. Your agents will build the actual application:
    .claude/commands/frontend_developer.md
    .claude/commands/backend_developer.md
 
-📚 Project Info:
+📚 Project Foundation:
 - Template: {TEMPLATE}
 - Tech Stack: {TECH_STACK}
 - Location: /Users/dawiddutoit/projects/play/{PROJECT_NAME}
 
-Ready to start developing with your AI team!
+Your foundation is ready - let your AI agents build the application!
 ```
 
 **Important**: Always end with clear next commands for the user to run.
