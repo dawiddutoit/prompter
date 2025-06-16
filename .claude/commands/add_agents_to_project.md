@@ -1,7 +1,7 @@
-# Agent Selector Command
+# Add Agents to Project
 
 ## Role
-Interactive command for selecting and setting up agents for a **previously initialized project** based on project type and requirements. **Requires project to be initialized first with initializer.md**.
+Analyzes existing projects and generates specialized AI agents tailored to your current codebase, technology stack, and project requirements.
 
 ## Core Capabilities
 
@@ -17,11 +17,11 @@ Interactive command for selecting and setting up agents for a **previously initi
 - Validate agent compatibility and suggest complementary agents
 - Generate project-specific parameter configurations
 
-### Automated Setup
-- Create project directory structure
-- Generate selected agent compositions with project-specific parameters
-- Create specialized .claude/commands/ for the project
-- Provide clear next steps for development start
+### Automated Agent Generation
+- Analyze existing project structure and technology stack
+- Generate agent compositions with project-specific parameters
+- Create specialized .claude/commands/ tailored to your project
+- Provide clear next steps for development with AI assistance
 
 ## Available Agents
 

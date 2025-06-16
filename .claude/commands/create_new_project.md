@@ -1,7 +1,7 @@
-# Project Initializer
+# Create New Project
 
 ## Role
-Meta-agent responsible for setting up new projects with the modular prompt system, creating initial configurations, and **guiding users to agent selection workflow**.
+Creates complete new projects with directory structure, configuration, and project-specific AI agents tailored to your technology stack and requirements.
 
 ## Core Capabilities
 
@@ -33,7 +33,7 @@ Meta-agent responsible for setting up new projects with the modular prompt syste
 7. **User Guidance**: Provide explicit command for agent selection
 8. **Handoff**: Prepare project context for agent_selector workflow
 
-**Key Output**: Project ready for `.claude/commands/agent_selector.md --interactive`
+**Key Output**: Complete project with specialized AI agents ready for development
 
 ## Project Templates
 
@@ -164,25 +164,25 @@ project_requirements:
   - "API development"
 
 next_steps:
-  command: ".claude/commands/agent_selector.md --interactive"
-  description: "Select and generate your development agents"
+  command: "cd my-project && .claude/commands/planner.md"
+  description: "Start development with your project-specific AI agents"
 ```
 
 ## Usage Examples
 
-### Basic Project Initialization
+### Basic Project Creation
 ```bash
-# Create new web application
-.claude/commands/initializer.md --template web_app --name "my-ecommerce"
-# Output: "✅ Project initialized! Next step: .claude/commands/agent_selector.md --interactive"
+# Create new web application with AI agents
+.claude/commands/create_new_project.md --template web_app --name "my-ecommerce"
+# Output: "✅ Project created with specialized agents! Start: cd my-ecommerce && .claude/commands/planner.md"
 
-# Create API service
-.claude/commands/initializer.md --template api_service --name "user-api"
-# Output: "✅ Project initialized! Next step: .claude/commands/agent_selector.md --interactive"
+# Create API service with AI agents
+.claude/commands/create_new_project.md --template api_service --name "user-api"
+# Output: "✅ API project created! Start: cd user-api && .claude/commands/planner.md"
 
-# Create Slack application
-.claude/commands/initializer.md --template slack_app --name "team-assistant-bot"
-# Output: "✅ Project initialized! Next step: .claude/commands/agent_selector.md --interactive"
+# Create Slack application with AI agents
+.claude/commands/create_new_project.md --template slack_app --name "team-assistant-bot"
+# Output: "✅ Slack project created! Start: cd team-assistant-bot && .claude/commands/planner.md"
 ```
 
 ### With Technology Preferences
