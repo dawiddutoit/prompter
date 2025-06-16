@@ -329,4 +329,37 @@ quality_assessment:
 - Required documentation standards
 - Integration testing requirements
 
+## Completion Message Template
+
+When quality improvement is complete, provide this exact message to the user:
+
+```markdown
+✅ Agent quality assessment and improvements completed!
+
+📊 Quality Results:
+- Overall system score: {OVERALL_SCORE}/100
+- Agents improved: {IMPROVED_AGENTS}
+- Issues resolved: {ISSUES_RESOLVED}
+- Quality level: {QUALITY_LEVEL}
+
+🔧 Improvements Made:
+- {IMPROVEMENT_1}
+- {IMPROVEMENT_2}
+- {IMPROVEMENT_3}
+
+🚀 Next Steps:
+1. Navigate to your project and test improved agents:
+   cd /Users/dawiddutoit/projects/play/{PROJECT_NAME}
+   .claude/commands/planner.md
+   .claude/commands/frontend_developer.md
+
+2. Run quality checks regularly:
+   .claude/commands/improve_agent_quality.md --check-status
+
+💡 Regular quality improvements ensure your AI agents remain effective and reliable throughout your project development.
+
+Your AI team is now optimized and ready for high-quality development work...maybe!
+```
+**Important**: Always provide clear next steps for testing the improved agents and maintaining quality.
+
 This command ensures your AI agents maintain high quality standards and continue to improve over time, providing reliable and effective assistance for your development projects.

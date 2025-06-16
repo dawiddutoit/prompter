@@ -14,7 +14,7 @@ Instead of generic AI prompts, Prompter generates project-specific AI agents tha
 .claude/commands/create_new_project.md --template web_app --name "my-shop"
 
 # Start developing with your AI team
-cd my-shop
+cd /Users/dawiddutoit/projects/play/my-shop
 .claude/commands/planner.md           # Plan features and requirements
 .claude/commands/frontend_developer.md  # Build React components
 .claude/commands/backend_developer.md   # Create APIs and database
@@ -77,28 +77,28 @@ Each agent knows about your specific project:
 ### E-commerce Site
 ```bash
 .claude/commands/create_new_project.md --template web_app --name "online-store"
-cd online-store
+cd /Users/dawiddutoit/projects/play/online-store
 .claude/commands/planner.md  # "Help me plan user authentication and product catalog"
 ```
 
 ### API Service
 ```bash
 .claude/commands/create_new_project.md --template api_service --name "user-api"
-cd user-api  
+cd /Users/dawiddutoit/projects/play/user-api  
 .claude/commands/backend_developer.md  # "Create REST endpoints for user management"
 ```
 
 ### Slack Bot
 ```bash
 .claude/commands/create_new_project.md --template slack_app --name "team-bot"
-cd team-bot
+cd /Users/dawiddutoit/projects/play/team-bot
 .claude/commands/slack_developer.md  # "Create a bot that tracks team standup responses"
 ```
 
 ### Custom Technology Stack
 ```bash
 .claude/commands/create_new_project.md --template web_app --name "vue-app" --frontend Vue --backend Python
-cd vue-app
+cd /Users/dawiddutoit/projects/play/vue-app
 .claude/commands/frontend_developer.md  # Now knows Vue.js instead of React
 ```
 

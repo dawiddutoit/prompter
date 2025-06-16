@@ -4,6 +4,16 @@
 
 Prompter helps you create specialized AI agents for your development projects using reusable, modular components.
 
+## How This Works
+
+Every command will:
+1. **Complete the task** (create project, add agents, etc.)
+2. **Show you exactly what was created**
+3. **Tell you the specific next command to run**
+4. **Explain what that next command will do**
+
+No guessing, no confusion - just clear next steps every time.
+
 ## What would you like to do?
 
 **1. 🚀 Create a new project with AI agents**
@@ -133,6 +143,36 @@ If you're working on the **prompter system itself** or need advanced features, c
 - **Examples**: `examples/` directory for working examples
 - **Issues**: Report problems in the GitHub repository
 - **Advanced Usage**: Explore `components/` for customization options
+
+---
+
+## After Making Your Choice
+
+When you select an option, I'll guide you through the process and then provide:
+
+1. **Clear completion status** - What was created/accomplished
+2. **Specific next commands** - Exactly what to run next
+3. **Context explanation** - What each command does for your project
+
+### Example Completion Messages:
+
+**After creating a project:**
+```
+✅ Project "my-shop" created successfully!
+
+🚀 Next Steps:
+1. cd /Users/dawiddutoit/projects/play/my-shop
+2. .claude/commands/planner.md
+```
+
+**After adding agents:**
+```
+✅ AI agents added to your project!
+
+🚀 Next Steps:
+1. .claude/commands/planner.md
+2. .claude/commands/frontend_developer.md
+```
 
 ---
 

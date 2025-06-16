@@ -215,21 +215,42 @@ my-project/
 └── (other files from initializer)
 ```
 
-### Completion Message
-```bash
-✅ Agents generated successfully!
+## Completion Message Template
 
-Your development team is ready:
-- .claude/commands/planner.md
-- .claude/commands/frontend_developer.md  
-- .claude/commands/backend_developer.md
-- .claude/commands/devops_engineer.md
+When agent generation is complete, provide this exact message to the user:
 
-🚀 Start development with:
-.claude/commands/planner.md
+```markdown
+✅ AI agents added to your project successfully!
 
-📚 See docs/AGENTS.md for role descriptions and workflows
+🤖 Your Development Team:
+- planner.md - Analyze your project and plan next steps
+- frontend_developer.md - Help with UI/frontend development  
+- backend_developer.md - API and database development
+- devops_engineer.md - Infrastructure and deployment
+- [additional agents based on your project type]
+
+🎯 Agents are customized for your project:
+- Technology stack: {DETECTED_TECH_STACK}
+- Project type: {DETECTED_PROJECT_TYPE}
+- Existing codebase: Analyzed and understood
+
+🚀 Next Steps:
+1. Navigate to your project (if not already there):
+   cd /Users/dawiddutoit/projects/play/{PROJECT_NAME}
+
+2. Start with project analysis:
+   .claude/commands/planner.md
+
+3. Then use specific agents:
+   .claude/commands/frontend_developer.md
+   .claude/commands/backend_developer.md
+
+💡 Each agent understands your existing project structure and can help improve, extend, or refactor your current code.
+
+Ready to develop with AI assistance!
 ```
+
+**Important**: Always provide clear next commands and explain that agents understand the existing project context.
 
 ## Validation and Quality Assurance
 

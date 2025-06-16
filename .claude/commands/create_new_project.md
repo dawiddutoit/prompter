@@ -22,18 +22,17 @@ Creates complete new projects with directory structure, configuration, and proje
 - Set up project context and requirements
 - Generate clear handoff instructions for next steps
 
-## Enhanced Initialization Workflow
+## Project Creation Workflow
 
 1. **Project Analysis**: Understand project type, team structure, requirements
 2. **Template Selection**: Choose appropriate base templates and components
-3. **Directory Creation**: Set up complete project structure (src/, docs/, tests/)
-4. **Configuration Generation**: Create project_config.yaml for agent_selector
+3. **Directory Creation**: Set up complete project structure at `/Users/dawiddutoit/projects/play/{PROJECT_NAME}`
+4. **Agent Generation**: Create specialized AI agents tailored to the project
 5. **Git Repository Setup**: Initialize git with initial commit
 6. **Documentation**: Generate README with clear next steps
-7. **User Guidance**: Provide explicit command for agent selection
-8. **Handoff**: Prepare project context for agent_selector workflow
+7. **Completion Guidance**: Provide specific next commands to run
 
-**Key Output**: Complete project with specialized AI agents ready for development
+**Key Output**: Complete project with specialized AI agents ready for development at `/Users/dawiddutoit/projects/play/{PROJECT_NAME}`
 
 ## Project Templates
 
@@ -123,10 +122,13 @@ technology_defaults:
 
 ## Generated Project Structure
 ```
-my-project/
+/Users/dawiddutoit/projects/play/{PROJECT_NAME}/
 ├── .claude/
-│   ├── commands/           # Empty - populated by agent_selector
-│   └── project_config.yaml # Project metadata for agent selection
+│   └── commands/           # Project-specific AI agents
+│       ├── planner.md
+│       ├── frontend_developer.md
+│       ├── backend_developer.md
+│       └── devops_engineer.md
 ├── src/                    # Application source code
 ├── docs/                   # Project documentation
 ├── tests/                  # Test directories
@@ -164,7 +166,7 @@ project_requirements:
   - "API development"
 
 next_steps:
-  command: "cd my-project && .claude/commands/planner.md"
+  command: "cd /Users/dawiddutoit/projects/play/{PROJECT_NAME} && .claude/commands/planner.md"
   description: "Start development with your project-specific AI agents"
 ```
 
@@ -174,15 +176,18 @@ next_steps:
 ```bash
 # Create new web application with AI agents
 .claude/commands/create_new_project.md --template web_app --name "my-ecommerce"
-# Output: "✅ Project created with specialized agents! Start: cd my-ecommerce && .claude/commands/planner.md"
+# Creates: /Users/dawiddutoit/projects/play/my-ecommerce/
+# Output: "✅ Project created! Next: cd /Users/dawiddutoit/projects/play/my-ecommerce && .claude/commands/planner.md"
 
 # Create API service with AI agents
 .claude/commands/create_new_project.md --template api_service --name "user-api"
-# Output: "✅ API project created! Start: cd user-api && .claude/commands/planner.md"
+# Creates: /Users/dawiddutoit/projects/play/user-api/
+# Output: "✅ API project created! Next: cd /Users/dawiddutoit/projects/play/user-api && .claude/commands/planner.md"
 
 # Create Slack application with AI agents
 .claude/commands/create_new_project.md --template slack_app --name "team-assistant-bot"
-# Output: "✅ Slack project created! Start: cd team-assistant-bot && .claude/commands/planner.md"
+# Creates: /Users/dawiddutoit/projects/play/team-assistant-bot/
+# Output: "✅ Slack project created! Next: cd /Users/dawiddutoit/projects/play/team-assistant-bot && .claude/commands/planner.md"
 ```
 
 ### With Technology Preferences
@@ -194,14 +199,17 @@ next_steps:
 
 ### Complete Workflow
 ```bash
-# Step 1: Initialize project structure
-.claude/commands/initializer.md --template web_app --name "blog-platform"
+# Step 1: Create project with specialized agents
+.claude/commands/create_new_project.md --template web_app --name "blog-platform"
+# Creates: /Users/dawiddutoit/projects/play/blog-platform/ with specialized AI agents
 
-# Step 2: Select your development agents  
-.claude/commands/agent_selector.md --interactive
-
-# Step 3: Start development
+# Step 2: Navigate to project and start development
+cd /Users/dawiddutoit/projects/play/blog-platform
 .claude/commands/planner.md
+
+# Step 3: Use other agents as needed
+.claude/commands/frontend_developer.md
+.claude/commands/backend_developer.md
 ```
 
 ## Command-Line Options
@@ -267,24 +275,46 @@ Once you've selected your agents, you'll have specialized AI assistants ready to
 Start with: `.claude/commands/planner.md` (available after agent selection)
 ```
 
-## Post-Initialization Output
+## Completion Message Template
+
+When project creation is complete, provide this exact message to the user if needed.
+
 ```markdown
-✅ Project "{PROJECT_NAME}" initialized successfully!
+✅ Project "{PROJECT_NAME}" created successfully!
 
 📁 Created:
 - Complete project structure (src/, docs/, tests/)
-- Git repository with initial commit
-- Project configuration (.claude/project_config.yaml)
-- Setup documentation (README.md)
+- Git repository with initial commit  
+- Specialized AI agents in .claude/commands/
+- Project documentation and README
 
-🚀 Next Step:
-.claude/commands/agent_selector.md --interactive
+🎯 Your AI Development Team:
+- planner.md - Project planning and requirements
+- frontend_developer.md - React/UI development (if web_app)
+- backend_developer.md - API and database development
+- devops_engineer.md - Infrastructure and deployment
+- [additional agents based on template]
 
-This will help you select the right AI agents for your {PROJECT_TYPE} project.
+🚀 Next Steps:
+1. Navigate to your project:
+   cd /Users/dawiddutoit/projects/play/{PROJECT_NAME}
 
-Template used: {TEMPLATE}
-Technology preferences: {TECH_STACK}
+2. Start with planning:
+   .claude/commands/planner.md
+
+3. Then use other agents as needed:
+   .claude/commands/frontend_developer.md
+   .claude/commands/backend_developer.md
+
+📚 Project Info:
+- Template: {TEMPLATE}
+- Tech Stack: {TECH_STACK}
+- Location: /Users/dawiddutoit/projects/play/{PROJECT_NAME}
+
+Ready to start developing with your AI team!
 ```
+
+**Important**: Always end with clear next commands for the user to run.
 
 ## Integration Points
 
