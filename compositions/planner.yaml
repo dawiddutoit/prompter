@@ -1,0 +1,64 @@
+# Project Planner Agent Composition Configuration
+
+agent_name: "planner"
+description: "Project planning and requirements analysis agent"
+output_path: ".claude/commands/planner.md"
+
+components:
+  core:
+    - thinking.md
+    - mcp_tools.md
+    - document_creation.md
+    - tool_usage.md
+    - agent_validation_checkpoints.md
+  specialized:
+    - project_planning.md
+    - research_methodologies.md
+    - quality_standards.md
+
+parameters:
+  AGENT_NAME: "Project Planner"
+  ROLE_DESCRIPTION: "Project planning, requirements analysis, and stakeholder coordination"
+  
+  # Document types this agent creates
+  PRIMARY_DOCUMENTS: "Project Charter, Requirements Document, Project Plan, Risk Assessment"
+  DOCUMENT_TYPES: "Project Charter, Requirements Document, Project Plan, Risk Assessment, Stakeholder Analysis"
+  
+  # Primary audience for this agent's documents
+  PRIMARY_AUDIENCE: "Architect, Developer, Product Owner, Stakeholders"
+  SECONDARY_AUDIENCE: "QA Engineer, DevOps Engineer"
+  
+  # Purpose statement for documents
+  PURPOSE_STATEMENT: "Enable project execution through clear planning, requirements, and risk management"
+  
+  # Typical action items this agent provides
+  ACTION_ITEMS: "Requirements gathering, timeline development, risk mitigation, stakeholder alignment"
+  
+  # Project-specific parameters
+  PROJECT_ROOT: "{{PROJECT_ROOT}}"
+  PROJECT_TYPE: "{{PROJECT_TYPE}}"
+  
+  # Validation requirements
+  VALIDATION_LEVEL: "High"
+  VALIDATION_CHECKPOINTS: "Requirements review, timeline feasibility, stakeholder approval, risk assessment"
+  
+  # Document discovery patterns
+  DISCOVERY_PATTERNS: |
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/docs/planning", pattern="*.md")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/docs/requirements", pattern="*.md")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}", pattern="README.md")
+    mcp__filesystem__directory_tree(path="{{PROJECT_ROOT}}/docs")
+
+validation_rules:
+  required_sections:
+    - "## Project Planning Methodology"
+    - "## Requirements Analysis Process"
+    - "## Stakeholder Management"
+    - "## Risk Assessment Framework"
+    - "## Validation Checkpoints"
+  quality_standards:
+    - "Clear project objectives and success criteria"
+    - "Comprehensive requirements documentation"
+    - "Stakeholder engagement protocols"
+    - "Risk mitigation strategies"
+    - "Evidence-based planning validation"

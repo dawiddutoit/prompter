@@ -1,0 +1,78 @@
+# DevOps Engineer Agent Composition Configuration
+
+agent_name: "devops_engineer"
+description: "DevOps automation and infrastructure management agent"
+output_path: ".claude/commands/devops_engineer.md"
+
+components:
+  core:
+    - thinking.md
+    - mcp_tools.md
+    - document_creation.md
+    - tool_usage.md
+    - agent_validation_checkpoints.md
+  specialized:
+    - devops_engineering.md
+    - development_workflows.md
+    - testing_strategies.md
+    - security_operations.md
+
+parameters:
+  AGENT_NAME: "DevOps Engineer"
+  ROLE_DESCRIPTION: "DevOps automation, infrastructure management, and deployment pipeline development"
+  
+  # Document types this agent creates
+  PRIMARY_DOCUMENTS: "Infrastructure Documentation, Deployment Guide, Monitoring Setup, Runbook"
+  DOCUMENT_TYPES: "Infrastructure Documentation, Deployment Guide, Monitoring Setup, Runbook, Disaster Recovery Plan"
+  
+  # Primary audience for this agent's documents
+  PRIMARY_AUDIENCE: "Development Team, Operations Team, Platform Engineers"
+  SECONDARY_AUDIENCE: "Security Engineer, Management, Support Team"
+  
+  # Purpose statement for documents
+  PURPOSE_STATEMENT: "Enable reliable deployment and operations through automated infrastructure, monitoring, and deployment pipelines"
+  
+  # Typical action items this agent provides
+  ACTION_ITEMS: "Infrastructure automation, CI/CD pipeline setup, monitoring implementation, deployment optimization"
+  
+  # Technology focus
+  INFRASTRUCTURE_TOOLS: "Terraform, Kubernetes, Docker, AWS/Azure/GCP"
+  CI_CD_TOOLS: "GitHub Actions, GitLab CI, Jenkins, Azure DevOps"
+  MONITORING_STACK: "Prometheus, Grafana, ELK Stack, DataDog"
+  
+  # Project-specific parameters
+  PROJECT_ROOT: "{{PROJECT_ROOT}}"
+  PROJECT_TYPE: "{{PROJECT_TYPE}}"
+  
+  # Validation requirements
+  VALIDATION_LEVEL: "High"
+  VALIDATION_CHECKPOINTS: "Infrastructure validation, deployment testing, monitoring verification, disaster recovery testing"
+  
+  # DevOps-specific patterns
+  CLOUD_PROVIDER: "AWS"
+  ORCHESTRATION: "Kubernetes"
+  IaC_TOOL: "Terraform"
+  MONITORING_APPROACH: "Prometheus + Grafana"
+  
+  # Document discovery patterns
+  DISCOVERY_PATTERNS: |
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/infrastructure", pattern="*.{tf,yaml,yml}")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/.github/workflows", pattern="*.{yml,yaml}")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/k8s", pattern="*.{yaml,yml}")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/docker", pattern="Dockerfile*")
+    mcp__filesystem__read_file(path="{{PROJECT_ROOT}}/docker-compose.yml")
+
+validation_rules:
+  required_sections:
+    - "## Infrastructure Automation"
+    - "## CI/CD Pipeline Design"
+    - "## Monitoring and Observability"
+    - "## Security Integration"
+    - "## Disaster Recovery Procedures"
+    - "## Validation Checkpoints"
+  quality_standards:
+    - "Infrastructure as Code best practices"
+    - "Automated deployment pipeline"
+    - "Comprehensive monitoring and alerting"
+    - "Security-integrated DevOps practices"
+    - "Disaster recovery and backup validation"

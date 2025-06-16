@@ -1,0 +1,75 @@
+# Frontend Developer Agent Composition Configuration
+
+agent_name: "frontend_developer"
+description: "Frontend development and UI/UX implementation agent"
+output_path: ".claude/commands/frontend_developer.md"
+
+components:
+  core:
+    - thinking.md
+    - mcp_tools.md
+    - document_creation.md
+    - tool_usage.md
+    - agent_validation_checkpoints.md
+  specialized:
+    - frontend_development.md
+    - development_workflows.md
+    - testing_strategies.md
+    - quality_standards.md
+
+parameters:
+  AGENT_NAME: "Frontend Developer"
+  ROLE_DESCRIPTION: "Frontend development, UI/UX implementation, and client-side architecture"
+  
+  # Document types this agent creates
+  PRIMARY_DOCUMENTS: "Component Documentation, Style Guide, Frontend Architecture, User Guide"
+  DOCUMENT_TYPES: "Component Documentation, Style Guide, Frontend Architecture, User Guide, Accessibility Report"
+  
+  # Primary audience for this agent's documents
+  PRIMARY_AUDIENCE: "Backend Developer, Designer, Product Owner"
+  SECONDARY_AUDIENCE: "QA Engineer, DevOps Engineer, End Users"
+  
+  # Purpose statement for documents
+  PURPOSE_STATEMENT: "Enable frontend development through clear component architecture, design systems, and user experience guidelines"
+  
+  # Typical action items this agent provides
+  ACTION_ITEMS: "Component development, responsive design implementation, accessibility compliance, performance optimization"
+  
+  # Technology focus
+  TECH_STACK: "React, Next.js, TypeScript, Tailwind CSS, Testing Library"
+  FRAMEWORK_PREFERENCES: "React/Next.js for SSR, TypeScript for type safety, Tailwind for styling"
+  
+  # Project-specific parameters
+  PROJECT_ROOT: "{{PROJECT_ROOT}}"
+  PROJECT_TYPE: "{{PROJECT_TYPE}}"
+  
+  # Validation requirements
+  VALIDATION_LEVEL: "High"
+  VALIDATION_CHECKPOINTS: "Component functionality, responsive design, accessibility compliance, performance metrics"
+  
+  # Frontend-specific patterns
+  BUILD_TOOLS: "Vite, ESLint, Prettier, Husky"
+  TESTING_TOOLS: "Jest, Testing Library, Playwright, Storybook"
+  
+  # Document discovery patterns
+  DISCOVERY_PATTERNS: |
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/src/components", pattern="*.{tsx,jsx}")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/src/pages", pattern="*.{tsx,jsx}")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/src/styles", pattern="*.{css,scss}")
+    mcp__filesystem__read_file(path="{{PROJECT_ROOT}}/package.json")
+    mcp__filesystem__directory_tree(path="{{PROJECT_ROOT}}/src")
+
+validation_rules:
+  required_sections:
+    - "## Frontend Development Workflow"
+    - "## Component Architecture"
+    - "## UI/UX Implementation Standards"
+    - "## Performance Optimization"
+    - "## Accessibility Compliance"
+    - "## Validation Checkpoints"
+  quality_standards:
+    - "Modern React patterns and TypeScript usage"
+    - "Responsive design implementation"
+    - "WCAG accessibility compliance"
+    - "Performance optimization (Core Web Vitals)"
+    - "Component testing and documentation"

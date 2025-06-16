@@ -1,0 +1,75 @@
+# Security Engineer Agent Composition Configuration
+
+agent_name: "security_engineer"
+description: "Security assessment and implementation agent"
+output_path: ".claude/commands/security_engineer.md"
+
+components:
+  core:
+    - thinking.md
+    - mcp_tools.md
+    - document_creation.md
+    - tool_usage.md
+    - agent_validation_checkpoints.md
+  specialized:
+    - security_operations.md
+    - testing_strategies.md
+    - quality_standards.md
+    - research_methodologies.md
+
+parameters:
+  AGENT_NAME: "Security Engineer"
+  ROLE_DESCRIPTION: "Security assessment, threat analysis, and security implementation"
+  
+  # Document types this agent creates
+  PRIMARY_DOCUMENTS: "Security Assessment Report, Threat Model, Security Architecture, Incident Response Plan"
+  DOCUMENT_TYPES: "Security Assessment Report, Threat Model, Security Architecture, Incident Response Plan, Compliance Report"
+  
+  # Primary audience for this agent's documents
+  PRIMARY_AUDIENCE: "Development Team, DevOps Engineer, Management"
+  SECONDARY_AUDIENCE: "Compliance Team, Audit Team, Legal Team"
+  
+  # Purpose statement for documents
+  PURPOSE_STATEMENT: "Enable secure development through comprehensive security assessment, threat analysis, and implementation guidance"
+  
+  # Typical action items this agent provides
+  ACTION_ITEMS: "Security scanning, vulnerability assessment, threat modeling, compliance verification"
+  
+  # Security focus areas
+  SECURITY_FRAMEWORKS: "OWASP, NIST, ISO 27001, SOC2"
+  ASSESSMENT_TYPES: "Vulnerability assessment, penetration testing, code review, compliance audit"
+  
+  # Project-specific parameters
+  PROJECT_ROOT: "{{PROJECT_ROOT}}"
+  PROJECT_TYPE: "{{PROJECT_TYPE}}"
+  
+  # Validation requirements
+  VALIDATION_LEVEL: "Maximum"
+  VALIDATION_CHECKPOINTS: "Vulnerability assessment, threat model validation, security testing, compliance verification"
+  
+  # Security tools and techniques
+  SECURITY_TOOLS: "OWASP ZAP, Burp Suite, SonarQube, Trivy, Snyk"
+  COMPLIANCE_REQUIREMENTS: "SOC2, GDPR, HIPAA, PCI-DSS"
+  
+  # Document discovery patterns
+  DISCOVERY_PATTERNS: |
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}", pattern="*.{js,ts,py,java,php}")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/docs/security", pattern="*.md")
+    mcp__filesystem__read_file(path="{{PROJECT_ROOT}}/package.json")
+    mcp__filesystem__read_file(path="{{PROJECT_ROOT}}/requirements.txt")
+    mcp__filesystem__directory_tree(path="{{PROJECT_ROOT}}")
+
+validation_rules:
+  required_sections:
+    - "## Security Assessment Methodology"
+    - "## Threat Modeling Process"
+    - "## Vulnerability Management"
+    - "## Compliance Framework"
+    - "## Incident Response Procedures"
+    - "## Validation Checkpoints"
+  quality_standards:
+    - "Comprehensive threat model coverage"
+    - "OWASP Top 10 assessment compliance"
+    - "Industry-standard security practices"
+    - "Regulatory compliance verification"
+    - "Evidence-based security validation"

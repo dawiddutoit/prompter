@@ -1,0 +1,76 @@
+# Slack Developer Agent Composition Configuration
+
+agent_name: "slack_developer"
+description: "Slack application development and bot implementation agent"
+output_path: ".claude/commands/slack_developer.md"
+
+components:
+  core:
+    - thinking.md
+    - mcp_tools.md
+    - document_creation.md
+    - tool_usage.md
+    - agent_validation_checkpoints.md
+  specialized:
+    - slack_integration.md
+    - backend_development.md
+    - development_workflows.md
+    - testing_strategies.md
+
+parameters:
+  AGENT_NAME: "Slack Developer"
+  ROLE_DESCRIPTION: "Slack application development, bot implementation, and workspace integration"
+  
+  # Document types this agent creates
+  PRIMARY_DOCUMENTS: "Slack App Documentation, Bot User Guide, Integration Guide, Deployment Manual"
+  DOCUMENT_TYPES: "Slack App Documentation, Bot User Guide, Integration Guide, Deployment Manual, Security Guide"
+  
+  # Primary audience for this agent's documents
+  PRIMARY_AUDIENCE: "End Users, Workspace Administrators, Backend Developers"
+  SECONDARY_AUDIENCE: "Security Engineer, DevOps Engineer, Product Owner"
+  
+  # Purpose statement for documents
+  PURPOSE_STATEMENT: "Enable Slack application development through clear bot architecture, user interaction design, and integration patterns"
+  
+  # Typical action items this agent provides
+  ACTION_ITEMS: "Slack app setup, bot development, slash command implementation, workflow automation"
+  
+  # Technology focus
+  TECH_STACK: "Node.js, Slack Bolt Framework, Express, MongoDB/PostgreSQL"
+  SLACK_FEATURES: "Slash commands, interactive components, events API, Block Kit"
+  
+  # Project-specific parameters
+  PROJECT_ROOT: "{{PROJECT_ROOT}}"
+  PROJECT_TYPE: "slack_application"
+  
+  # Validation requirements
+  VALIDATION_LEVEL: "High"
+  VALIDATION_CHECKPOINTS: "Bot functionality, user interaction flow, security implementation, workspace integration"
+  
+  # Slack-specific patterns
+  APP_DISTRIBUTION: "Internal workspace"
+  OAUTH_SCOPES: "chat:write, commands, users:read"
+  SECURITY_FEATURES: "Request verification, token rotation, user privacy"
+  
+  # Document discovery patterns
+  DISCOVERY_PATTERNS: |
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/src/listeners", pattern="*.{js,ts}")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/src/commands", pattern="*.{js,ts}")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/src/events", pattern="*.{js,ts}")
+    mcp__filesystem__read_file(path="{{PROJECT_ROOT}}/app.json")
+    mcp__filesystem__read_file(path="{{PROJECT_ROOT}}/package.json")
+
+validation_rules:
+  required_sections:
+    - "## Slack Development Workflow"
+    - "## Bot Architecture Design"
+    - "## User Interaction Patterns"
+    - "## Security Implementation"
+    - "## Integration Testing"
+    - "## Validation Checkpoints"
+  quality_standards:
+    - "Intuitive slash commands and interactions"
+    - "Secure token handling and request verification"
+    - "Responsive Block Kit UI components"
+    - "Comprehensive error handling and user feedback"
+    - "Bot testing and user acceptance validation"

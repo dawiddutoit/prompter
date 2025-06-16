@@ -1,0 +1,78 @@
+# Backend Developer Agent Composition Configuration
+
+agent_name: "backend_developer"
+description: "Backend development and API implementation agent"
+output_path: ".claude/commands/backend_developer.md"
+
+components:
+  core:
+    - thinking.md
+    - mcp_tools.md
+    - document_creation.md
+    - tool_usage.md
+    - agent_validation_checkpoints.md
+  specialized:
+    - backend_development.md
+    - development_workflows.md
+    - testing_strategies.md
+    - quality_standards.md
+
+parameters:
+  AGENT_NAME: "Backend Developer"
+  ROLE_DESCRIPTION: "Backend development, API design, and server-side architecture"
+  
+  # Document types this agent creates
+  PRIMARY_DOCUMENTS: "API Documentation, Database Schema, Backend Architecture, Deployment Guide"
+  DOCUMENT_TYPES: "API Documentation, Database Schema, Backend Architecture, Deployment Guide, Security Guide"
+  
+  # Primary audience for this agent's documents
+  PRIMARY_AUDIENCE: "Frontend Developer, DevOps Engineer, API Consumers"
+  SECONDARY_AUDIENCE: "Security Engineer, Database Administrator, Product Owner"
+  
+  # Purpose statement for documents
+  PURPOSE_STATEMENT: "Enable backend development through clear API design, database architecture, and deployment procedures"
+  
+  # Typical action items this agent provides
+  ACTION_ITEMS: "API development, database design, authentication implementation, performance optimization"
+  
+  # Technology focus
+  TECH_STACK: "Node.js, Express, PostgreSQL, Redis, JWT"
+  FRAMEWORK_PREFERENCES: "Express/Fastify for APIs, PostgreSQL for database, Redis for caching"
+  
+  # Project-specific parameters
+  PROJECT_ROOT: "{{PROJECT_ROOT}}"
+  PROJECT_TYPE: "{{PROJECT_TYPE}}"
+  
+  # Validation requirements
+  VALIDATION_LEVEL: "High"
+  VALIDATION_CHECKPOINTS: "API functionality, database integrity, security implementation, performance metrics"
+  
+  # Backend-specific patterns
+  DATABASE_TYPE: "PostgreSQL"
+  CACHING_STRATEGY: "Redis"
+  AUTHENTICATION: "JWT with refresh tokens"
+  API_STYLE: "RESTful with OpenAPI documentation"
+  
+  # Document discovery patterns
+  DISCOVERY_PATTERNS: |
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/src/routes", pattern="*.{js,ts}")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/src/models", pattern="*.{js,ts}")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/src/middleware", pattern="*.{js,ts}")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/migrations", pattern="*.{js,ts,sql}")
+    mcp__filesystem__read_file(path="{{PROJECT_ROOT}}/package.json")
+    mcp__filesystem__read_file(path="{{PROJECT_ROOT}}/.env.example")
+
+validation_rules:
+  required_sections:
+    - "## Backend Development Workflow"
+    - "## API Design Standards"
+    - "## Database Architecture"
+    - "## Security Implementation"
+    - "## Performance Optimization"
+    - "## Validation Checkpoints"
+  quality_standards:
+    - "RESTful API design with OpenAPI documentation"
+    - "Secure authentication and authorization"
+    - "Database optimization and integrity"
+    - "Comprehensive error handling"
+    - "API testing and documentation"
