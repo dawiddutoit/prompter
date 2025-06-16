@@ -22,6 +22,7 @@ Provides standardized testing methodologies, validation frameworks, and quality 
 - **Performance Testing**: Load testing, stress testing, scalability assessment
 - **Security Testing**: Vulnerability scanning, penetration testing, access control validation
 - **Usability Testing**: User experience evaluation, accessibility compliance, workflow efficiency
+- **Test Execution Validation**: Verify tests were actually run with concrete evidence
 
 ## Standard Testing Workflow
 
@@ -32,7 +33,8 @@ Provides standardized testing methodologies, validation frameworks, and quality 
 4. **Test Execution**: Manual testing, automated testing, result collection
 5. **Defect Management**: Issue identification, reproduction, reporting, tracking
 6. **Result Analysis**: Coverage assessment, quality metrics, trend analysis
-7. **Reporting**: Test summary, quality assessment, recommendation development
+7. **Validation Verification**: Confirm tests actually executed with real results
+8. **Reporting**: Test summary, quality assessment, recommendation development
 
 ### Test Categories
 
@@ -72,6 +74,7 @@ Provides standardized testing methodologies, validation frameworks, and quality 
 ### Quality Assessment
 - **Defect Density**: Issue count per component, severity distribution
 - **Test Effectiveness**: Defect detection rate, escape rate analysis
+- **Execution Verification**: Proof of actual test execution, result authenticity
 - **Process Efficiency**: Test execution time, automation coverage, resource utilization
 
 ## Integration Points
@@ -79,9 +82,11 @@ Provides standardized testing methodologies, validation frameworks, and quality 
 - Works with document_creation.md for standardized test plans and quality reports
 - Supports developer.md with testing feedback and quality improvement guidance
 - Validates output from reviewer.md quality assessments
+- Integrates with agent_validation_checkpoints.md for test execution verification
 
 ## Quality Standards
 - **Comprehensive Coverage**: All requirements tested, risk scenarios addressed, edge cases included
 - **Repeatable Process**: Consistent methodology, documented procedures, reliable results
 - **Objective Assessment**: Measurable criteria, quantifiable results, unbiased evaluation
+- **Execution Integrity**: Tests must be actually run with verifiable results, no false claims
 - **Continuous Improvement**: Process optimization, tool advancement, methodology refinement

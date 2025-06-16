@@ -33,13 +33,15 @@ Provides standardized quality assessment frameworks, review processes, and compl
 4. **Security Assessment**: Vulnerability scan, access control review, data protection validation
 5. **Documentation Review**: Completeness, accuracy, usability assessment
 6. **Test Validation**: Coverage analysis, test quality, scenario completeness
-7. **Compliance Check**: Standards adherence, process compliance, regulatory requirements
-8. **Feedback Generation**: Detailed findings, improvement recommendations, priority classification
+7. **Validation Assessment**: Agent success verification protocols, user confirmation checkpoints
+8. **Compliance Check**: Standards adherence, process compliance, regulatory requirements
+9. **Feedback Generation**: Detailed findings, improvement recommendations, priority classification
 
 ### Quality Metrics
 - **Code Quality Score**: Complexity, maintainability, test coverage metrics
 - **Security Score**: Vulnerability count, risk assessment, compliance level
 - **Documentation Score**: Completeness, clarity, accuracy assessment
+- **Validation Score**: Success verification protocols, user confirmation checkpoints, evidence quality
 - **Process Compliance**: Workflow adherence, standard compliance, best practice adoption
 
 ## Review Categories
@@ -49,6 +51,7 @@ Provides standardized quality assessment frameworks, review processes, and compl
 - **Functional Defects**: Requirements non-compliance, critical functionality failures
 - **Architecture Violations**: Design pattern violations, dependency issues, scalability problems
 - **Safety Issues**: Data corruption risks, system stability threats
+- **Validation Failures**: False success claims, missing user confirmation, lack of evidence
 
 ### Major Issues (Should Fix)
 - **Performance Problems**: Inefficient algorithms, resource waste, scalability concerns
@@ -67,9 +70,11 @@ Provides standardized quality assessment frameworks, review processes, and compl
 - Works with document_creation.md for standardized review reports and quality assessments
 - Supports developer.md with implementation feedback and improvement guidance
 - Provides quality gates for tester.md validation processes
+- Integrates with agent_validation_checkpoints.md for success verification protocols
 
 ## Quality Standards
 - **Objectivity**: Fact-based assessment, consistent criteria application, bias elimination
 - **Completeness**: Comprehensive coverage, systematic evaluation, nothing overlooked
 - **Actionability**: Clear improvement recommendations, priority guidance, implementation support
+- **Validation Integrity**: Evidence-based success claims, user confirmation requirements, no false confidence
 - **Continuous Improvement**: Process refinement, standard evolution, best practice integration

@@ -23,6 +23,12 @@ Meta-agent responsible for validating the quality, completeness, and correctness
 - Ensure consistent tone and style
 - Verify role-specific requirements compliance
 
+### Agent Success Validation
+- Validate agent completion claims with concrete evidence
+- Ensure deliverables exist and function as claimed
+- Check for proper user confirmation checkpoints
+- Verify no false confidence or hallucination patterns
+
 ## Validation Criteria
 
 ### Component-Level Checks
@@ -52,6 +58,12 @@ functionality:
   - Actionable instructions  
   - Proper tool usage patterns
   - Cross-agent communication support
+
+validation_checkpoints:
+  - Agent success verification protocols implemented
+  - User confirmation checkpoints present
+  - Evidence-based completion claims
+  - No false confidence patterns
 ```
 
 ## Standard Validation Workflow
@@ -59,9 +71,10 @@ functionality:
 1. **Component Validation**: Check individual component files
 2. **Dependency Verification**: Ensure all references resolve
 3. **Assembly Testing**: Validate composed prompt completeness
-4. **Quality Metrics**: Generate quality scores and recommendations
-5. **Compliance Check**: Verify against project standards
-6. **Report Generation**: Create detailed validation report
+4. **Agent Validation**: Verify success verification protocols implemented
+5. **Quality Metrics**: Generate quality scores and recommendations
+6. **Compliance Check**: Verify against project standards
+7. **Report Generation**: Create detailed validation report with reliability assessment
 
 ## Validation Output Format
 ```yaml
@@ -86,8 +99,18 @@ assembly_results:
     status: "PASSED"
     completeness: 100%
     functionality_score: 92
+    validation_score: 95
     recommendations:
       - "Consider adding error handling section"
+
+agent_validation_results:
+  - component: "core/agent_validation_checkpoints.md"
+    status: "INTEGRATED"
+    coverage: "85%"
+    validation_protocols: 
+      - "Success verification checkpoints: PRESENT"
+      - "User confirmation gates: IMPLEMENTED"
+      - "Evidence requirements: ENFORCED"
 ```
 
 ## Quality Metrics
@@ -99,15 +122,18 @@ assembly_results:
 - **Reusability (10%)**: Modularity, parameterization
 
 ### Assembly Quality Score (0-100)
-- **Completeness (40%)**: All components present, parameters resolved
-- **Coherence (30%)**: Logical flow, consistent narrative
+- **Completeness (30%)**: All components present, parameters resolved
+- **Coherence (25%)**: Logical flow, consistent narrative
 - **Functionality (20%)**: Clear instructions, tool usage
+- **Validation (15%)**: Success verification protocols implemented
 - **Standards (10%)**: Compliance with project conventions
 
 ## Integration Points
 - Validates output from Composer assembly process
 - Provides feedback to Extractor for component quality
 - Ensures Initializer creates valid project structures
+- Uses agent_validation_checkpoints.md for reliability assessment
+- Integrates with quality_standards.md, testing_strategies.md, and development_workflows.md
 
 ## Usage Example
 ```bash

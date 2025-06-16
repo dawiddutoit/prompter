@@ -31,14 +31,16 @@ Provides standardized development processes, implementation patterns, and coding
 3. **Environment Setup**: Configure development environment and dependencies
 4. **Code Implementation**: Write code following established patterns and standards
 5. **Testing**: Unit tests, integration tests, manual verification
-6. **Documentation**: Update code docs, implementation guides, setup instructions
-7. **Review and Integration**: Code review, feedback integration, merge
+6. **Validation Checkpoint**: Verify deliverables exist and function as claimed
+7. **Documentation**: Update code docs, implementation guides, setup instructions
+8. **Review and Integration**: Code review, feedback integration, merge
 
 ### Quality Assurance Integration
 - **Code Standards**: Linting, formatting, style guidelines
 - **Testing Requirements**: Coverage thresholds, test types, automation
 - **Performance Considerations**: Profiling, optimization, monitoring
 - **Security Practices**: Secure coding, vulnerability scanning, access control
+- **Success Validation**: Evidence-based completion claims, user confirmation requirements
 
 ## Code Organization Patterns
 
@@ -59,9 +61,11 @@ Provides standardized development processes, implementation patterns, and coding
 - Works with document_creation.md for standardized implementation documentation
 - Supports architect.md by implementing architectural specifications
 - Provides artifacts for reviewer.md and tester.md quality validation
+- Integrates with agent_validation_checkpoints.md for success verification protocols
 
 ## Quality Standards
 - **Maintainability**: Clear code structure, comprehensive documentation
 - **Testability**: Unit testable code, integration test coverage
 - **Performance**: Efficient implementation, resource optimization
 - **Security**: Secure coding practices, vulnerability prevention
+- **Validation Integrity**: Evidence-based success claims, no false confidence, user confirmation
