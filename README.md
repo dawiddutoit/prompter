@@ -84,25 +84,42 @@ prompter/
 
 ## Quick Start
 
-### Option 1: Interactive Agent Selection (Recommended)
+### Simple 3-Step Workflow (Recommended)
 ```bash
-# Launch interactive agent selection for new project
+# Step 1: Initialize project structure and setup
+.claude/commands/initializer.md --template web_app --name "my-ecommerce"
+# Creates: project structure, git repo, configuration files
+# Output: "✅ Project initialized! Next: .claude/commands/agent_selector.md --interactive"
+
+# Step 2: Select your development agents
 .claude/commands/agent_selector.md --interactive
+# Reads: project config, provides smart recommendations
+# Creates: specialized .claude/commands/ agents for your project
+# Output: "✅ Agents ready! Start with: .claude/commands/planner.md"
+
+# Step 3: Start development with your agents
+.claude/commands/planner.md
+# Your project-specific agents are ready to help!
 ```
 
-### Option 2: Quick Template Setup
+### Quick Project Templates
 ```bash
-# Web application with frontend + backend + DevOps
-.claude/commands/agent_selector.md --template web_app --name "my-web-app"
+# Web application (React + Node.js + PostgreSQL)
+.claude/commands/initializer.md --template web_app --name "my-web-app"
 
-# API service with backend + DevOps + security
-.claude/commands/agent_selector.md --template api_service --name "my-api"
+# API service (Backend + Database)
+.claude/commands/initializer.md --template api_service --name "my-api"
 
-# Slack application
-.claude/commands/agent_selector.md --template slack_app --name "team-bot"
+# Slack application (Bot + Integrations)
+.claude/commands/initializer.md --template slack_app --name "team-bot"
+
+# Enterprise application (Full stack + Security + Compliance)
+.claude/commands/initializer.md --template enterprise --name "customer-portal"
 ```
 
-### Option 3: Manual Component Assembly
+### Advanced: Manual Component Assembly
+
+For advanced users who want to create custom agents or analyze existing prompts:
 
 #### 1. Extract from Existing Project
 ```bash
@@ -110,7 +127,7 @@ prompter/
 .claude/commands/extractor.md --source .claude/commands/ --output components/
 ```
 
-### 2. Compose New Agent
+#### 2. Compose New Agent
 ```yaml
 # Create composition config (compositions/architect.yaml)
 agent_name: "architect"
@@ -123,45 +140,70 @@ parameters:
   VALIDATION_LEVEL: "High"
 ```
 
-### 3. Generate Agent Prompt
+#### 3. Generate Agent Prompt
 ```bash
 # Compose final prompt from components
 .claude/commands/composer.md --config compositions/architect.yaml --output .claude/commands/architect.md
 ```
 
-### 4. Validate Quality and Reliability
+#### 4. Validate Quality and Reliability
 ```bash
 # Validate components and compositions for quality and validation protocols
 .claude/commands/validator.md --components components/ --compositions compositions/ --report validation_report.yaml
 ```
 
-## Agent Selection Examples
+## Complete Project Examples
 
-### Example 1: Full-Stack Web Application
+### Example 1: E-commerce Platform
 ```bash
-# Interactive selection will recommend:
+# Step 1: Initialize with web app template
+.claude/commands/initializer.md --template web_app --name "ecommerce-platform"
+
+# Step 2: Agent selector will recommend:
 # planner + architect + frontend_developer + backend_developer + devops_engineer
-.claude/commands/agent_selector.md --template web_app --name "ecommerce-platform"
+.claude/commands/agent_selector.md --interactive
+
+# Step 3: Start development
+.claude/commands/planner.md  # Begin with requirements and planning
 ```
 
 ### Example 2: Enterprise API Platform  
 ```bash
-# Includes security and compliance focus:
+# Step 1: Initialize with enterprise template (includes security focus)
+.claude/commands/initializer.md --template enterprise --name "customer-api"
+
+# Step 2: Agent selector will recommend:
 # planner + architect + backend_developer + devops_engineer + security_engineer
-.claude/commands/agent_selector.md --template enterprise --name "customer-api"
+.claude/commands/agent_selector.md --interactive
+
+# Step 3: Start development
+.claude/commands/planner.md  # Begin with security-focused planning
 ```
 
-### Example 3: Slack Workspace Integration
+### Example 3: Slack Bot for Team Productivity
 ```bash
-# Specialized for Slack development:
+# Step 1: Initialize with Slack app template
+.claude/commands/initializer.md --template slack_app --name "productivity-bot"
+
+# Step 2: Agent selector will recommend:
 # planner + slack_developer + backend_developer + security_engineer
-.claude/commands/agent_selector.md --template slack_app --name "productivity-bot"
+.claude/commands/agent_selector.md --interactive
+
+# Step 3: Start development
+.claude/commands/planner.md  # Begin with bot requirements and workflows
 ```
 
-### Example 4: Custom Agent Selection
+### Example 4: Custom Integration Project
 ```bash
-# Choose specific agents for unique requirements
-.claude/commands/agent_selector.md --agents "planner,frontend_developer,security_engineer" --name "secure-dashboard"
+# Step 1: Use the closest template as starting point
+.claude/commands/initializer.md --template api_service --name "custom-integration"
+
+# Step 2: Customize agent selection during interactive process
+.claude/commands/agent_selector.md --interactive
+# Can add/remove agents based on specific needs
+
+# Step 3: Start development
+.claude/commands/planner.md  # Begin with custom requirements analysis
 ```
 
 ## Benefits
@@ -324,10 +366,38 @@ EOF
 
 ## Getting Started
 
-1. **Initialize Project**: Use Initializer for new projects
-2. **Extract Components**: Use Extractor for existing prompts  
-3. **Compose Agents**: Use Composer for modular assembly
-4. **Validate Quality**: Use Validator for compliance and reliability checks
-5. **Monitor Performance**: Use Interaction History Analyzer for continuous improvement
+### For New Projects (Most Common)
+1. **Initialize Project**: `.claude/commands/initializer.md --template <type> --name "project"`
+2. **Select Agents**: `.claude/commands/agent_selector.md --interactive`
+3. **Start Development**: `.claude/commands/planner.md` (or your preferred starting agent)
+
+### For Advanced Users
+1. **Extract Components**: Use Extractor for existing prompts  
+2. **Compose Agents**: Use Composer for modular assembly
+3. **Validate Quality**: Use Validator for compliance and reliability checks
+4. **Monitor Performance**: Use Interaction History Analyzer for continuous improvement
+
+### What You Get
+
+After the 3-step setup, you'll have:
+- ✅ **Complete Project Structure**: src/, docs/, tests/, infrastructure/
+- ✅ **Git Repository**: Initialized with proper .gitignore
+- ✅ **Project-Specific Agents**: Tailored to your technology stack and requirements
+- ✅ **Clear Documentation**: README with workflow and agent responsibilities
+- ✅ **Ready to Develop**: No configuration needed, start coding immediately
 
 The modular approach transforms prompt engineering from artisanal craft to systematic engineering practice with built-in reliability and validation protocols.
+
+## Documentation
+
+- **[Quick Start Guide](docs/QUICK_START.md)** - Get started in 3 commands
+- **[Workflow Guide](docs/WORKFLOW_GUIDE.md)** - Complete development workflow with agents
+- **[Component Reference](components/)** - Detailed component documentation
+- **[Agent Compositions](compositions/)** - Pre-configured agent examples
+
+## Support
+
+- **Issues**: Report bugs and feature requests in the GitHub issues
+- **Documentation**: Comprehensive guides in the `docs/` directory
+- **Examples**: Working examples in the `examples/` directory
+- **Validation**: Use the built-in validator for quality assurance

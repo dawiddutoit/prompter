@@ -1,7 +1,7 @@
 # Agent Selector Command
 
 ## Role
-Interactive command for selecting and setting up agents for a new project based on project type and requirements.
+Interactive command for selecting and setting up agents for a **previously initialized project** based on project type and requirements. **Requires project to be initialized first with initializer.md**.
 
 ## Core Capabilities
 
@@ -20,8 +20,8 @@ Interactive command for selecting and setting up agents for a new project based 
 ### Automated Setup
 - Create project directory structure
 - Generate selected agent compositions with project-specific parameters
-- Set up initial documentation templates
-- Configure validation rules and quality standards
+- Create specialized .claude/commands/ for the project
+- Provide clear next steps for development start
 
 ## Available Agents
 
@@ -126,10 +126,11 @@ project_structure:
 
 ### Interactive Selection Process
 
-1. **Project Analysis**
+1. **Project Context Detection**
    ```bash
-   # Start agent selection process
+   # Agent selector reads .claude/project_config.yaml for context
    .claude/commands/agent_selector.md --interactive
+   # Output: "📁 Detected project: my-ecommerce (web_application)"
    ```
 
 2. **Project Type Selection**
@@ -141,24 +142,27 @@ project_structure:
    - Enterprise Application (Full stack + Security + Compliance)
    - Custom (Manual agent selection)
 
-3. **Agent Selection Interface**
+3. **Smart Agent Recommendations (based on project_config.yaml)**
    ```
-   Select agents for your project:
+   📁 Project: my-ecommerce (web_application)
    
-   ✅ Core Agents (Recommended)
-   [ ] planner - Project planning and requirements analysis
-   [ ] architect - System design and architecture planning
+   Based on your project type, here are recommended agents:
    
-   ✅ Development Agents
-   [ ] frontend_developer - React/Vue/Angular development
-   [ ] backend_developer - API and database development
-   [ ] slack_developer - Slack bot development
+   ✅ Core Agents (Recommended from project config)
+   [✓] planner - Project planning and requirements analysis
+   [✓] architect - System design and architecture planning
+   
+   ✅ Development Agents (Recommended)
+   [✓] frontend_developer - React development
+   [✓] backend_developer - Node.js API development
    
    ✅ Operations Agents
    [ ] devops_engineer - Infrastructure and deployment
+   
+   ✅ Optional Agents
    [ ] security_engineer - Security and compliance
    
-   Continue with selection? (y/n)
+   Continue with these selections? (y/n)
    ```
 
 4. **Project Configuration**
@@ -193,26 +197,38 @@ project_structure:
 
 ### Generated Output
 
-After selection, the command generates:
+After selection, the command updates the existing project:
 
 ```
 my-project/
 ├── .claude/
-│   └── commands/
-│       ├── planner.md (generated)
-│       ├── frontend_developer.md (generated)
-│       ├── backend_developer.md (generated)
-│       └── devops_engineer.md (generated)
-├── compositions/
-│   ├── planner.yaml (project-specific)
-│   ├── frontend_developer.yaml (project-specific)
-│   ├── backend_developer.yaml (project-specific)
-│   └── devops_engineer.yaml (project-specific)
+│   ├── commands/                    # ✅ POPULATED BY AGENT SELECTOR
+│   │   ├── planner.md              # Generated with project context
+│   │   ├── frontend_developer.md   # Generated with project context
+│   │   ├── backend_developer.md    # Generated with project context
+│   │   └── devops_engineer.md      # Generated with project context
+│   └── project_config.yaml         # Updated with selected agents
+├── src/                             # (from initializer)
 ├── docs/
-│   ├── README.md (project setup)
-│   ├── AGENTS.md (agent roles and responsibilities)
-│   └── WORKFLOW.md (team collaboration guide)
-└── PROJECT_CONFIG.yaml (project metadata)
+│   ├── README.md                    # Updated with agent workflow
+│   └── AGENTS.md                    # Generated agent guide
+└── (other files from initializer)
+```
+
+### Completion Message
+```bash
+✅ Agents generated successfully!
+
+Your development team is ready:
+- .claude/commands/planner.md
+- .claude/commands/frontend_developer.md  
+- .claude/commands/backend_developer.md
+- .claude/commands/devops_engineer.md
+
+🚀 Start development with:
+.claude/commands/planner.md
+
+📚 See docs/AGENTS.md for role descriptions and workflows
 ```
 
 ## Validation and Quality Assurance
