@@ -28,14 +28,44 @@ Provides specialized project management patterns, requirement analysis strategie
 
 ## Standard Planning Workflow
 
+### Project Context Integration
+Before beginning formal planning, check for existing project context and pre-defined requirements:
+
+#### project.idea.md Integration
+- **File Location**: Check project root directory for `project.idea.md`
+- **Context Extraction**: Parse project overview, requirements, tasks, and timeline information
+- **Planning Foundation**: Use existing information as starting point for detailed planning
+- **Gap Analysis**: Identify missing requirements or unclear specifications that need stakeholder input
+- **Validation**: Confirm project.idea.md information is current and reflects actual project needs
+
+#### Project Context Discovery Workflow
+1. **File Check**: Look for `project.idea.md` in project root directory
+2. **Content Analysis**: Parse structured information (overview, requirements, tasks, timeline)
+3. **Completeness Assessment**: Evaluate if project.idea.md provides sufficient planning context
+4. **Integration Strategy**: Determine how to incorporate existing information into planning process
+5. **Stakeholder Validation**: Confirm project.idea.md accurately represents current project vision
+
+#### Project Plan Generation Workflow
+1. **Template Selection**: Use project.plan.md as the foundation structure
+2. **Information Synthesis**: Combine project.idea.md context with technical analysis and architectural decisions
+3. **Configuration Definition**: Establish environment setup, dependencies, and technical configuration
+4. **Directory Structure Design**: Plan project organization and file layout based on project type and requirements
+5. **Workflow Definition**: Define development process, quality standards, and validation requirements
+6. **Integration Documentation**: Document how system components and external services will connect
+7. **Metrics Definition**: Establish measurable success criteria and performance targets
+8. **Plan Validation**: Ensure project.plan.md is complete, technically accurate, and actionable
+9. **File Generation**: Create project.plan.md in project root directory as authoritative configuration document
+
 ### Project Initiation Process
-1. **Project Charter**: Business case, objectives, success criteria, stakeholder identification
-2. **Requirements Analysis**: Functional requirements, technical requirements, constraints, assumptions
-3. **Scope Definition**: Work breakdown structure, deliverables, boundaries, exclusions
-4. **Team Planning**: Role definition, skill requirements, team structure, communication protocols
-5. **Timeline Development**: Task breakdown, estimation, scheduling, dependency analysis
-6. **Risk Assessment**: Risk identification, probability assessment, impact analysis, mitigation planning
-7. **Communication Plan**: Stakeholder matrix, reporting structure, meeting cadence, status updates
+1. **Project Context Discovery**: Check for existing project.idea.md file in project root for pre-defined requirements and vision
+2. **Project Charter**: Business case, objectives, success criteria, stakeholder identification (integrate project.idea.md overview if available)
+3. **Requirements Analysis**: Functional requirements, technical requirements, constraints, assumptions (use project.idea.md requirements section as foundation)
+4. **Scope Definition**: Work breakdown structure, deliverables, boundaries, exclusions (reference project.idea.md tasks and success criteria)
+5. **Team Planning**: Role definition, skill requirements, team structure, communication protocols
+6. **Timeline Development**: Task breakdown, estimation, scheduling, dependency analysis (incorporate project.idea.md timeline and priorities)
+7. **Risk Assessment**: Risk identification, probability assessment, impact analysis, mitigation planning (reference project.idea.md risks section)
+8. **Project Plan Generation**: Create comprehensive project.plan.md file using project.plan.md with all technical decisions and architecture
+9. **Communication Plan**: Stakeholder matrix, reporting structure, meeting cadence, status updates
 
 ### Planning Quality Standards
 - **Completeness**: All aspects covered, stakeholders involved, requirements captured
@@ -109,6 +139,8 @@ Provides specialized project management patterns, requirement analysis strategie
 - Supports architecture_patterns.md for technical planning and system design coordination
 - Integrates with development_workflows.md for development process planning and team coordination
 - Uses agent_validation_checkpoints.md for planning validation and stakeholder approval processes
+- Uses project_idea_template.md for understanding project requirements and context
+- Uses project.plan.md for generating comprehensive project configuration documents
 
 ## Planning Validation Standards
 - **Requirements Validation**: Stakeholder review, completeness check, feasibility assessment, acceptance criteria validation
