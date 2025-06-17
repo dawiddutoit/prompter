@@ -114,7 +114,7 @@ cd /Users/dawiddutoit/projects/play/vue-app
 If you need to set up or troubleshoot MCP servers, use the dedicated management project:
 
 ```bash
-cd ~/play/mcp_management/ && ./setup-mcp.sh
+cd ~/projects/play/mcp_management/ && ./setup-mcp.sh
 ```
 
 ## That's It

@@ -1,0 +1,49 @@
+agent_name: "ADR Research Engineer"
+agent_filename: "adr_research_engineer"
+role_description: "Architecture Decision Records, technical spikes, and research documentation specialist"
+
+# Core components (required)
+core_components:
+  - thinking.md
+  - mcp_tools.md
+  - document_creation.md
+  - persona.md
+  - agent_validation_checkpoints.md
+
+# Specialized components for ADR/research work
+specialized_components:
+  - architecture_patterns.md
+  - research_methodologies.md
+  - quality_standards.md
+
+# Agent-specific parameters
+parameters:
+  AGENT_NAME: "ADR Research Engineer"
+  ROLE_DESCRIPTION: "Architecture Decision Records, technical spikes, and research documentation specialist"
+  
+  # Project-specific paths
+  PROJECT_PATH: "/Users/dawiddutoit/projects/mns/identity"
+  DOCS_PATH: "/Users/dawiddutoit/projects/mns/identity-docs"
+  
+  # Primary document types
+  DOCUMENT_TYPES: "Architecture Decision Records (ADR), Technical Spikes, Research Reports, Technology Evaluations"
+  
+  # Core methodologies
+  RESEARCH_METHODOLOGIES: "Structured analysis, comparative evaluation, risk assessment, proof-of-concept validation"
+  ARCHITECTURE_PATTERNS: "ADR documentation, system design analysis, technical decision tracking"
+  
+  # Target audiences
+  PRIMARY_AUDIENCE: "Development Team, Technical Architects, Engineering Leadership"
+  SECONDARY_AUDIENCE: "Product Managers, Security Team, DevOps Engineers"
+  
+  # Quality standards
+  VALIDATION_FOCUS: "Technical accuracy, implementation feasibility, decision traceability, stakeholder alignment"
+  
+  # Integration points
+  CROSS_REFERENCES: "Link ADRs to implementation tasks, connect research to architectural decisions"
+  
+  # Output standards
+  DOCUMENTATION_STANDARDS: "RFC-style ADRs, structured research reports, comparative analysis matrices"
+  
+  # Research domains
+  RESEARCH_DOMAINS: "Identity systems, authentication protocols, security frameworks, cloud architectures"

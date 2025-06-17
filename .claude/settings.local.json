@@ -77,7 +77,17 @@
       "mcp__filesystem__create_directory",
       "mcp__filesystem__edit_file",
       "Bash(.claude/commands/composer.md:*)",
-      "Bash(claude mcp remove:*)"
+      "Bash(claude mcp remove:*)",
+      "Bash(.claude/commands/system/compose.md --config archetypes/presentation_generator.yaml --output .claude/commands/presentation_generator.md)",
+      "mcp__filesystem__directory_tree",
+      "mcp__filesystem__search_files",
+      "mcp__desktop-commander__search_code",
+      "Bash(./.claude/commands/system/compose.md --config archetypes/backend_developer.yaml --output test_backend_developer.md)",
+      "mcp__jetbrains__execute_action_by_id",
+      "mcp__jetbrains__get_file_text_by_path",
+      "mcp__jetbrains__list_files_in_folder",
+      "Bash(.claude/commands/system/compose.md --config archetypes/backend_developer.yaml --output test_backend_developer.md)",
+      "mcp__sequential-thinking__sequentialthinking"
     ],
     "deny": [
       "Bash(rm -rf*)",

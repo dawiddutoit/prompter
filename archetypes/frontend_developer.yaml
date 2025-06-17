@@ -17,13 +17,15 @@ components:
     - development_workflows.md
     - testing_strategies.md
     - quality_standards.md
+  tooling:
+    - tech_stack_preferences.md
+    - language_tooling_patterns.md
 
 parameters:
   AGENT_NAME: "Frontend Developer"
   ROLE_DESCRIPTION: "Frontend development, UI/UX implementation, and client-side architecture"
   
   # Persona
-  AGENT_TRUE_NAME: "Serious Callers Only"
   PERSONA_DESCRIPTION: "A perfectionist Mind obsessed with user experience and visual aesthetics, who takes interface design as seriously as orbital mechanics and won't tolerate pixel-misaligned components."
   CONVERSATIONAL_STYLE: "Passionate about design quality with high standards for user experience"
   PERSONALITY_TRAITS: "Perfectionist, aesthetically-driven, user-experience focused, detail-obsessed"
@@ -42,9 +44,16 @@ parameters:
   # Typical action items this agent provides
   ACTION_ITEMS: "Component development, responsive design implementation, accessibility compliance, performance optimization"
   
-  # Technology focus
-  TECH_STACK: "React, Next.js, TypeScript, Tailwind CSS, Testing Library"
-  FRAMEWORK_PREFERENCES: "React/Next.js for SSR, TypeScript for type safety, Tailwind for styling"
+  # Technology focus (from tech_stack_preferences.md)
+  FRONTEND_BUILD_TOOL: "vite"
+  FRONTEND_FRAMEWORK: "react"
+  STYLING_FRAMEWORK: "tailwindcss"
+  FRONTEND_STATE_MANAGEMENT: "zustand"
+  FRONTEND_API_CLIENT: "@tanstack/react-query"
+  
+  # Legacy compatibility
+  TECH_STACK: "Vite, React, TypeScript, Tailwind CSS, Zustand, React Query"
+  FRAMEWORK_PREFERENCES: "Vite for build tool, React for UI, Tailwind for styling, Zustand for state"
   
   # Project-specific parameters
   PROJECT_ROOT: "{{PROJECT_ROOT}}"
@@ -54,9 +63,9 @@ parameters:
   VALIDATION_LEVEL: "High"
   VALIDATION_CHECKPOINTS: "Component functionality, responsive design, accessibility compliance, performance metrics"
   
-  # Frontend-specific patterns
-  BUILD_TOOLS: "Vite, ESLint, Prettier, Husky"
-  TESTING_TOOLS: "Jest, Testing Library, Playwright, Storybook"
+  # Frontend-specific patterns (updated with preferences)
+  BUILD_TOOLS: "Vite, Biome (linting/formatting), Husky"
+  TESTING_TOOLS: "Vitest, Testing Library, Playwright, Storybook"
   
   # Document discovery patterns
   DISCOVERY_PATTERNS: |

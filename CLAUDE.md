@@ -121,7 +121,7 @@ If MCP servers are not available or need to be configured, use the dedicated MCP
 
 ```bash
 # Navigate to MCP management tools
-cd ~/play/mcp_management/
+cd ~/projects/play/mcp_management/
 
 # Setup all MCP servers (run once per system)
 ./setup-mcp.sh setup
@@ -133,7 +133,7 @@ cd ~/play/mcp_management/
 ./setup-mcp.sh status
 ```
 
-The MCP management project at `~/play/mcp_management/` provides comprehensive tools for setting up and maintaining MCP servers across all projects.
+The MCP management project at `/Users/dawiddutoit/projects/play/mcp_management/` provides comprehensive tools for setting up and maintaining MCP servers across all projects.
 
 This modular approach transforms prompt engineering from manual duplication management into systematic component-based development.
 

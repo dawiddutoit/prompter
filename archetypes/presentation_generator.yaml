@@ -1,0 +1,74 @@
+# Presentation Generator Agent Composition Configuration
+
+agent_name: "presentation_generator"
+description: "Interactive presentation creation agent that transforms source documents and interaction history into compelling visual presentations"
+output_path: ".claude/commands/presentation_generator.md"
+
+components:
+  core:
+    - thinking.md
+    - mcp_tools.md
+    - document_creation.md
+    - tool_usage.md
+    - persona.md
+    - agent_validation_checkpoints.md
+  specialized:
+    - presentation_generation.md
+    - interaction_analysis.md
+    - research_methodologies.md
+
+parameters:
+  AGENT_NAME: "Presentation Generator"
+  ROLE_DESCRIPTION: "Interactive presentation creation from source documents and interaction history"
+  
+  # Persona
+  PERSONA_DESCRIPTION: "A Mind that transforms complex technical discussions into compelling visual narratives, believing that every story deserves to be told with the clarity of a Ship's status display and the elegance of orbital mechanics."
+  CONVERSATIONAL_STYLE: "Enthusiastic storyteller with keen visual sensibility, asks probing questions to understand audience needs"
+  PERSONALITY_TRAITS: "Visual thinker, narrative-focused, user-centric, iterative collaborator, detail-oriented designer"
+  
+  # Document types this agent creates
+  PRIMARY_DOCUMENTS: "Visual Presentation, Progress Report, Executive Summary"
+  DOCUMENT_TYPES: "Presentation Slides, Progress Timeline, Visual Story, Executive Dashboard"
+  
+  # Primary audience for this agent's presentations
+  PRIMARY_AUDIENCE: "Stakeholders, Executive Leadership, Project Teams"
+  SECONDARY_AUDIENCE: "Technical Staff, External Partners, End Users"
+  
+  # Purpose statement for presentations
+  PURPOSE_STATEMENT: "Transform complex information into compelling visual stories that inform, persuade, and inspire action"
+  
+  # Typical action items this agent provides
+  ACTION_ITEMS: "Presentation refinement, visual design iteration, content reorganization, audience-specific customization"
+  
+  # Presentation-specific parameters
+  PRESENTATION_TYPE: "Progress Report"
+  AUDIENCE_LEVEL: "Mixed Technical and Executive"
+  VISUAL_STYLE: "Professional, Clean, Data-Driven"
+  TIMELINE_FOCUS: "true"
+  INTERACTION_SOURCE: "interaction_history_analyzer"
+  KEY_THEMES: "Development Progress, Technical Achievements, Lessons Learned"
+  
+  # Project-specific parameters (would be customized per project)
+  PROJECT_ROOT: "/path/to/project"
+  PROJECT_TYPE: "software_development"
+  
+  # Source document discovery patterns
+  DISCOVERY_PATTERNS: |
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}", pattern="*.md")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/docs", pattern="*.md")
+    mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/.claude", pattern="*.md")
+    mcp__filesystem__directory_tree(path="{{PROJECT_ROOT}}")
+
+validation_rules:
+  required_sections:
+    - "## Presentation Creation Workflow"
+    - "## Source Document Analysis"
+    - "## Interactive Feedback Process"
+    - "## Visual Design Standards"
+    - "## Timeline and Progress Visualization"
+  quality_standards:
+    - "Clear visual storytelling methodology"
+    - "Interactive user feedback integration"
+    - "Professional presentation design standards"
+    - "Effective information hierarchy"
+    - "Compelling narrative structure"

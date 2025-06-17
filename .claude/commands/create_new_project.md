@@ -68,7 +68,7 @@ A complete project at `/Users/dawiddutoit/projects/play/{PROJECT_NAME}/` with ev
 ### Phase 2.5: MCP Infrastructure Reference
 - [ ] Add MCP management reference to project CLAUDE.md
 - [ ] Include MCP troubleshooting instructions in README.md
-- [ ] Ensure user knows where to find MCP management tools (~/play/mcp_management/)
+- [ ] Ensure user knows where to find MCP management tools (~/projects/play/mcp_management/)
 
 ### Phase 3: AI Agent Creation
 - [ ] Create planner.md agent with project-specific context

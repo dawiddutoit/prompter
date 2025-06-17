@@ -6,9 +6,16 @@ Provides specialized backend development patterns, API design strategies, and se
 ## Core Capabilities
 
 ### Backend Technology Stack
-- **Node.js**: Express, Fastify, NestJS, serverless functions, microservices
-- **Python**: FastAPI, Django, Flask, async patterns, data processing
-- **Java**: Spring Boot, microservices, enterprise patterns, JVM optimization
+
+#### Preferred Technologies (from tech_stack_preferences.md)
+- **Python**: `uv` + `fastapi` + `pydantic` + `langgraph` (for AI/agent projects)
+- **Kotlin**: `micronaut` + `gradle.kts` + `openapi` (lightweight microservices)
+- **Node.js**: `fastify` + `typescript` (high-performance APIs)
+
+#### Additional Technology Options
+- **Node.js**: Express, NestJS, serverless functions, microservices
+- **Python**: Django, Flask, async patterns, data processing
+- **Kotlin**: Spring Boot, enterprise patterns, JVM optimization
 - **Go**: Gin, Echo, concurrent programming, system programming
 - **Rust**: Actix, Axum, performance-critical applications, memory safety
 
@@ -65,7 +72,27 @@ Provides specialized backend development patterns, API design strategies, and se
 
 ## Technology-Specific Patterns
 
-### Node.js/Express Patterns
+### Modern Python Patterns (Preferred)
+- **Package Management**: `uv` for fast dependency management and project setup
+- **Data Validation**: `pydantic` models for type-safe APIs and configuration
+- **Agent Frameworks**: `langgraph` for building AI agents and workflows
+- **API Framework**: `fastapi` + `uvicorn` for high-performance async APIs
+- **Code Quality**: `ruff` (linting/formatting) + `mypy` (type checking)
+
+### Node.js/Fastify Patterns (Preferred)
+- **Framework**: Fastify for high-performance APIs with TypeScript support
+- **Package Management**: `bun` or `npm` with modern tooling
+- **Type Safety**: Full TypeScript integration with strict configuration
+- **Testing**: `vitest` for fast unit testing
+
+### Kotlin/Micronaut Patterns (Preferred)
+- **Framework**: Micronaut for lightweight, fast-startup microservices
+- **Build Tool**: Gradle with Kotlin DSL for type-safe builds
+- **Language Features**: Explicit API mode, null safety, coroutines
+- **API Documentation**: OpenAPI with automatic generation
+- **Testing**: Kotest + JUnit 5 + Testcontainers for comprehensive testing
+
+### Legacy Node.js/Express Patterns
 - **Middleware**: Custom middleware, error handling, request processing pipelines
 - **Async Patterns**: Promises, async/await, stream processing, event loops
 - **Performance**: Clustering, worker threads, memory management, profiling
@@ -83,6 +110,10 @@ Provides specialized backend development patterns, API design strategies, and se
 - Supports testing_strategies.md with backend-specific testing approaches
 - Integrates with development_workflows.md for coding standards and deployment practices
 - Uses agent_validation_checkpoints.md for API validation and integration testing
+- References tooling/tech_stack_preferences.md for personalized technology defaults
+- Incorporates tooling/python_modern_tooling.md for uv + pydantic + langgraph patterns
+- Uses tooling/kotlin_modern_tooling.md for micronaut + gradle.kts patterns
+- References tooling/language_tooling_patterns.md for language-specific development setups
 
 ## Backend Validation Standards
 - **API Functionality**: Endpoint testing, response validation, error handling verification

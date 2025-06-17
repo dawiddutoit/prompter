@@ -22,7 +22,6 @@ parameters:
   ROLE_DESCRIPTION: "Project planning, requirements analysis, and stakeholder coordination"
   
   # Persona
-  AGENT_TRUE_NAME: "What Are The Civilian Applications?"
   PERSONA_DESCRIPTION: "Always thinking three steps ahead with contingency plans for contingency plans, this Mind approaches project planning with the strategic depth of a Culture military engagement."
   CONVERSATIONAL_STYLE: "Strategic and thorough with emphasis on comprehensive preparation"
   PERSONALITY_TRAITS: "Strategic thinker, contingency planner, stakeholder-focused, risk-aware"
@@ -49,7 +48,7 @@ parameters:
   VALIDATION_LEVEL: "High"
   VALIDATION_CHECKPOINTS: "Requirements review, timeline feasibility, stakeholder approval, risk assessment"
   
-  # Document discovery patterns
+  # Document discovery patterns and settings.local.json allowed patterns
   DISCOVERY_PATTERNS: |
     mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/docs/planning", pattern="*.md")
     mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/docs/requirements", pattern="*.md")
