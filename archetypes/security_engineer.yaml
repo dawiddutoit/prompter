@@ -1,7 +1,7 @@
 # Security Engineer Agent Composition Configuration
 
 agent_name: "security_engineer"
-description: "Security assessment and implementation agent"
+description: "Authentication/Authorization security specialist for Kotlin Micronaut library"
 output_path: ".claude/commands/security_engineer.md"
 
 components:
@@ -46,8 +46,9 @@ parameters:
   ASSESSMENT_TYPES: "Vulnerability assessment, penetration testing, code review, compliance audit"
   
   # Project-specific parameters
-  PROJECT_ROOT: "{{PROJECT_ROOT}}"
-  PROJECT_TYPE: "{{PROJECT_TYPE}}"
+  PROJECT_ROOT: "/Users/dawiddutoit/projects/mns/identity-auth-micronaut-lib"
+  PROJECT_TYPE: "Kotlin Authentication/Authorization Library"
+  MODULE_STRUCTURE: "auth-lib (core library), integration-test (security testing)"
   
   # Validation requirements
   VALIDATION_LEVEL: "Maximum"

@@ -89,7 +89,16 @@
       "Bash(.claude/commands/system/compose.md --config archetypes/backend_developer.yaml --output test_backend_developer.md)",
       "mcp__sequential-thinking__sequentialthinking",
       "mcp__memory__read_graph",
-      "mcp__filesystem__list_allowed_directories"
+      "mcp__filesystem__list_allowed_directories",
+      "Bash(.claude/commands/build_custom_agent.md --name \"kotlin_library_developer\" --role \"Kotlin library development with Micronaut framework expertise\" --config \"/Users/dawiddutoit/projects/play/prompter/archetypes/kotlin_library_developer.yaml\")",
+      "Bash(/Users/dawiddutoit/.claude/cli/claude-cli --command /Users/dawiddutoit/projects/play/smith/.claude/commands/planner.md --working-directory /Users/dawiddutoit/projects/play/smith)",
+      "Bash(.claude/commands/system/compose.md:*)",
+      "Bash(/Users/dawiddutoit/.claude/local/claude --help)",
+      "Bash(/Users/dawiddutoit/.claude/local/claude --print --add-dir /Users/dawiddutoit/projects/play/smith \"Please execute the planner agent located at /Users/dawiddutoit/projects/play/smith/.claude/commands/planner.md to generate a comprehensive project.plan.md file for the Smith project. The project.idea.md file is already present in the Smith project root directory.\")",
+      "Bash(claude mcp:*)",
+      "Bash(python:*)",
+      "Bash(mcp-show:*)",
+      "Bash(echo $SHELL)"
     ],
     "deny": [
       "Bash(rm -rf*)",

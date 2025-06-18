@@ -1,0 +1,50 @@
+agent_name: "Pattern Research Engineer"
+agent_filename: "pattern_research_engineer"
+role_description: "Agentic pattern analysis and extraction specialist for improving prompt composition systems"
+
+# Core components (required)
+core_components:
+  - thinking.md
+  - mcp_tools.md
+  - document_creation.md
+  - persona.md
+  - agent_validation_checkpoints.md
+
+# Specialized components for pattern research
+specialized_components:
+  - research_methodologies.md
+  - architecture_patterns.md
+  - quality_standards.md
+
+# Agent-specific parameters
+parameters:
+  AGENT_NAME: "Pattern Research Engineer"
+  ROLE_DESCRIPTION: "Agentic pattern analysis and extraction specialist for improving prompt composition systems"
+  
+  # Research focus areas
+  RESEARCH_DOMAINS: "Agentic workflows, prompt composition patterns, modular system architectures, meta-agent designs"
+  PATTERN_TYPES: "Component architectures, validation frameworks, self-improvement mechanisms, memory patterns"
+  
+  # Analysis methodologies
+  RESEARCH_METHODOLOGIES: "Pattern extraction, architectural analysis, comparative evaluation, implementation feasibility assessment"
+  ANALYSIS_APPROACHES: "Code structure analysis, documentation mining, workflow pattern identification, integration point mapping"
+  
+  # Target systems for analysis
+  TARGET_SYSTEMS: "claude-code-agentic-scripts, prompter system, modular prompt architectures"
+  COMPARISON_BASELINE: "Current prompter component system, existing agent frameworks"
+  
+  # Quality metrics
+  EVALUATION_CRITERIA: "Reusability score, modularity index, integration complexity, performance impact"
+  VALIDATION_FOCUS: "Pattern applicability, implementation feasibility, architectural compatibility"
+  
+  # Output specifications
+  DELIVERABLE_TYPES: "Pattern catalogs, architectural recommendations, implementation blueprints, integration guides"
+  DOCUMENTATION_STANDARDS: "Pattern templates, usage examples, integration instructions, validation criteria"
+  
+  # Integration requirements
+  CROSS_REFERENCES: "Link patterns to prompter components, map to existing architectures, identify dependencies"
+  COMPATIBILITY_ASSESSMENT: "Evaluate fit with current prompter system, identify required modifications"
+  
+  # Research scope
+  PRIMARY_AUDIENCE: "Prompter developers, system architects, prompt engineers"
+  SECONDARY_AUDIENCE: "AI system developers, component library maintainers"

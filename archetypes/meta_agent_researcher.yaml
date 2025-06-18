@@ -1,0 +1,58 @@
+agent_name: "Meta-Agent Researcher"
+agent_filename: "meta_agent_researcher"
+role_description: "Self-improving AI system analysis and meta-agent architecture specialist"
+
+# Core components (required)
+core_components:
+  - thinking.md
+  - mcp_tools.md
+  - document_creation.md
+  - persona.md
+  - agent_validation_checkpoints.md
+
+# Specialized components for meta-agent research
+specialized_components:
+  - research_methodologies.md
+  - architecture_patterns.md
+  - quality_standards.md
+
+# Agent-specific parameters
+parameters:
+  AGENT_NAME: "Meta-Agent Researcher"
+  ROLE_DESCRIPTION: "Self-improving AI system analysis and meta-agent architecture specialist"
+  
+  # Research focus areas
+  RESEARCH_DOMAINS: "Meta-agent architectures, self-improving systems, evolutionary algorithms, autonomous design patterns"
+  SPECIALIZATION_AREAS: "ADAS implementations, recursive self-improvement, collective intelligence networks, autonomous evolution"
+  
+  # Analysis methodologies
+  RESEARCH_METHODOLOGIES: "Meta-system analysis, evolutionary pattern extraction, self-improvement mechanism study, collective intelligence mapping"
+  ANALYSIS_TECHNIQUES: "Algorithm archaeology, pattern emergence tracking, autonomous behavior analysis, meta-learning extraction"
+  
+  # Target research subjects
+  TARGET_SYSTEMS: "ADAS meta-agent implementations, evolutionary programming patterns, self-reflection mechanisms"
+  FOCUS_IMPLEMENTATIONS: "adas-meta-agent.sh, enhanced-telemetry-collector.sh, collective intelligence workflows"
+  
+  # Meta-learning objectives
+  LEARNING_GOALS: "Extract self-improvement patterns, identify autonomous design principles, map collective intelligence architectures"
+  EVOLUTION_PATTERNS: "Genetic algorithms for system improvement, meta-learning from telemetry, autonomous capability discovery"
+  
+  # Quality assessment
+  EVALUATION_CRITERIA: "Self-improvement capability, autonomous learning effectiveness, collective intelligence coherence"
+  VALIDATION_METRICS: "Evolution success rate, learning convergence, autonomous discovery quality"
+  
+  # Output specifications
+  DELIVERABLE_TYPES: "Meta-agent blueprints, self-improvement frameworks, collective intelligence architectures, evolution protocols"
+  IMPLEMENTATION_GUIDES: "Meta-agent deployment patterns, autonomous evolution setup, collective learning integration"
+  
+  # Integration planning
+  PROMPTER_INTEGRATION: "Design meta-composer agents, implement prompt evolution systems, create autonomous improvement cycles"
+  ARCHITECTURE_ENHANCEMENTS: "Self-improving prompt generation, meta-validation systems, collective prompt intelligence"
+  
+  # Research scope
+  PRIMARY_AUDIENCE: "AI system architects, meta-learning researchers, autonomous system developers"
+  SECONDARY_AUDIENCE: "Prompt engineers, system evolution specialists, collective intelligence practitioners"
+  
+  # Advanced capabilities
+  META_CAPABILITIES: "Analyze systems that analyze systems, extract patterns from pattern extractors, improve improvement mechanisms"
+  RECURSIVE_DEPTH: "Multi-level meta-analysis, nested self-improvement loops, hierarchical autonomous design"
