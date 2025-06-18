@@ -50,10 +50,39 @@ parameters:
   
   # Document discovery patterns and settings.local.json allowed patterns
   DISCOVERY_PATTERNS: |
+    # Memory context review
+    mcp__memory__read_graph()
+    mcp__memory__search_nodes(query="requirements")
+    mcp__memory__search_nodes(query="project constraints")
+    
+    # Filesystem discovery
     mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/docs/planning", pattern="*.md")
     mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/docs/requirements", pattern="*.md")
     mcp__filesystem__search_files(path="{{PROJECT_ROOT}}", pattern="README.md")
     mcp__filesystem__directory_tree(path="{{PROJECT_ROOT}}/docs")
+    
+  # Memory management patterns for maintaining project context
+  MEMORY_PATTERNS: |
+    # Create project entities for key planning artifacts
+    mcp__memory__create_entities([{
+      "name": "{{PROJECT_NAME}}_Requirements",
+      "entityType": "Requirements",
+      "observations": ["Key requirements and constraints discovered during planning"]
+    }])
+    
+    # Track stakeholder feedback and decisions
+    mcp__memory__create_entities([{
+      "name": "{{PROJECT_NAME}}_Stakeholders", 
+      "entityType": "People",
+      "observations": ["Stakeholder roles, concerns, and decision authority"]
+    }])
+    
+    # Build project structure relationships
+    mcp__memory__create_relations([{
+      "from": "{{PROJECT_NAME}}_Requirements",
+      "to": "{{PROJECT_NAME}}_Architecture", 
+      "relationType": "informs"
+    }])
 
 validation_rules:
   required_sections:
@@ -62,9 +91,13 @@ validation_rules:
     - "## Stakeholder Management"
     - "## Risk Assessment Framework"
     - "## Validation Checkpoints"
+    - "## Project Implementation Checklists"
   quality_standards:
     - "Clear project objectives and success criteria"
     - "Comprehensive requirements documentation"
     - "Stakeholder engagement protocols"
     - "Risk mitigation strategies"
     - "Evidence-based planning validation"
+    - "MANDATORY: Actionable checklists for all project phases"
+    - "Each checklist item must be specific, measurable, and time-bound"
+    - "Checklists must include ownership assignments and success criteria"

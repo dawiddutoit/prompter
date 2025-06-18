@@ -87,7 +87,9 @@
       "mcp__jetbrains__get_file_text_by_path",
       "mcp__jetbrains__list_files_in_folder",
       "Bash(.claude/commands/system/compose.md --config archetypes/backend_developer.yaml --output test_backend_developer.md)",
-      "mcp__sequential-thinking__sequentialthinking"
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__memory__read_graph",
+      "mcp__filesystem__list_allowed_directories"
     ],
     "deny": [
       "Bash(rm -rf*)",

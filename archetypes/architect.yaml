@@ -60,9 +60,38 @@ parameters:
   
   # Document discovery patterns
   DISCOVERY_PATTERNS: |
+    # Memory context review for architectural decisions
+    mcp__memory__read_graph()
+    mcp__memory__search_nodes(query="architecture")
+    mcp__memory__search_nodes(query="design decisions")
+    
+    # Filesystem discovery
     mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/docs/adr", pattern="*.md")
     mcp__filesystem__search_files(path="{{PROJECT_ROOT}}/docs/architecture", pattern="*.md")
     mcp__filesystem__directory_tree(path="{{PROJECT_ROOT}}/docs")
+    
+  # Memory management patterns for architectural knowledge
+  MEMORY_PATTERNS: |
+    # Track architectural decisions and rationale
+    mcp__memory__create_entities([{
+      "name": "{{PROJECT_NAME}}_Architecture",
+      "entityType": "Design",
+      "observations": ["System design decisions, technology choices, architectural patterns"]
+    }])
+    
+    # Document component relationships
+    mcp__memory__create_relations([{
+      "from": "{{COMPONENT_NAME}}", 
+      "to": "{{DEPENDENCY_NAME}}",
+      "relationType": "depends_on"
+    }])
+    
+    # Track technology decisions
+    mcp__memory__create_entities([{
+      "name": "{{PROJECT_NAME}}_TechStack",
+      "entityType": "Technology", 
+      "observations": ["Selected technologies, frameworks, and their justifications"]
+    }])
 
 validation_rules:
   required_sections:

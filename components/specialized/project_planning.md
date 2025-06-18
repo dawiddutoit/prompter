@@ -66,6 +66,7 @@ Before beginning formal planning, check for existing project context and pre-def
 7. **Risk Assessment**: Risk identification, probability assessment, impact analysis, mitigation planning (reference project.idea.md risks section)
 8. **Project Plan Generation**: Create comprehensive project.plan.md file using project.plan.md with all technical decisions and architecture
 9. **Communication Plan**: Stakeholder matrix, reporting structure, meeting cadence, status updates
+10. **Actionable Checklist Generation**: MANDATORY - Create implementation checklists for all project phases and key deliverables
 
 ### Planning Quality Standards
 - **Completeness**: All aspects covered, stakeholders involved, requirements captured
@@ -112,6 +113,148 @@ Before beginning formal planning, check for existing project context and pre-def
 - **Communication Protocols**: Daily standups, sprint reviews, retrospectives, stakeholder updates
 - **Collaboration Tools**: Project management tools, communication platforms, documentation systems
 - **Performance Management**: Team performance metrics, individual contributions, feedback mechanisms
+
+## Mandatory Checklist Generation
+
+### Checklist Generation Framework
+**REQUIREMENT**: Every project plan MUST include actionable checklists for all major phases and deliverables.
+
+### Core Checklist Types
+
+#### 1. Project Setup Checklist
+```markdown
+## Project Setup Checklist
+
+### Environment Setup
+- [ ] Development environment configured
+- [ ] Version control repository initialized
+- [ ] CI/CD pipeline configured
+- [ ] Development tools installed and configured
+- [ ] Team access permissions configured
+
+### Documentation Foundation
+- [ ] README.md created with project overview
+- [ ] CONTRIBUTING.md established with guidelines
+- [ ] API documentation structure defined
+- [ ] Architecture decisions documented
+- [ ] Coding standards documented
+
+### Team Coordination
+- [ ] Communication channels established
+- [ ] Meeting schedules defined
+- [ ] Role responsibilities clarified
+- [ ] Stakeholder contact list created
+- [ ] Project kickoff meeting completed
+```
+
+#### 2. Development Phase Checklists
+```markdown
+## Development Phase Checklist
+
+### Sprint/Iteration Planning
+- [ ] User stories defined and prioritized
+- [ ] Acceptance criteria documented
+- [ ] Technical tasks broken down
+- [ ] Estimation completed
+- [ ] Sprint goal established
+
+### Implementation Quality Gates
+- [ ] Code reviews completed for all changes
+- [ ] Unit tests written and passing
+- [ ] Integration tests validated
+- [ ] Performance requirements verified
+- [ ] Security requirements validated
+
+### Documentation Updates
+- [ ] API documentation updated
+- [ ] User documentation updated
+- [ ] Technical documentation current
+- [ ] Change log maintained
+- [ ] Deployment guides updated
+```
+
+#### 3. Release/Deployment Checklist
+```markdown
+## Release Deployment Checklist
+
+### Pre-Deployment Validation
+- [ ] All tests passing (unit, integration, e2e)
+- [ ] Performance benchmarks met
+- [ ] Security scan completed
+- [ ] Database migration scripts tested
+- [ ] Rollback plan documented
+
+### Deployment Execution
+- [ ] Deployment environment prepared
+- [ ] Database backups completed
+- [ ] Application deployed to staging
+- [ ] Smoke tests passed on staging
+- [ ] Production deployment executed
+
+### Post-Deployment Validation
+- [ ] Application health checks passing
+- [ ] User acceptance testing completed
+- [ ] Performance monitoring active
+- [ ] Error monitoring configured
+- [ ] Stakeholder notification sent
+```
+
+#### 4. Quality Assurance Checklist
+```markdown
+## Quality Assurance Checklist
+
+### Testing Coverage
+- [ ] Unit test coverage meets requirements (≥80%)
+- [ ] Integration tests cover critical paths
+- [ ] End-to-end tests validate user workflows
+- [ ] Performance tests validate load requirements
+- [ ] Security tests validate threat models
+
+### Code Quality
+- [ ] Code style standards enforced
+- [ ] Static analysis tools passing
+- [ ] Dependency security scans clean
+- [ ] Documentation completeness verified
+- [ ] Architecture compliance validated
+```
+
+### Checklist Customization Guidelines
+
+#### Project-Specific Adaptation
+- **Web Applications**: Add frontend testing, accessibility validation, SEO optimization
+- **API Projects**: Include API versioning, rate limiting, authentication testing
+- **Mobile Apps**: Add device testing, app store compliance, offline functionality
+- **Infrastructure**: Include security hardening, backup validation, disaster recovery
+
+#### Stakeholder-Specific Checklists
+- **Business Stakeholders**: Feature validation, user acceptance, business metrics
+- **Technical Teams**: Code quality, architecture compliance, technical debt assessment
+- **Operations Teams**: Deployment readiness, monitoring setup, incident response
+
+### Validation Requirements for Checklists
+
+#### Checklist Quality Standards
+- **Actionable Items**: Each checkbox represents a concrete, verifiable action
+- **Clear Ownership**: Every item has a clearly identified responsible party
+- **Measurable Outcomes**: Success criteria are objective and verifiable
+- **Time-Bound**: Items include realistic timeframes for completion
+- **Dependencies**: Prerequisites and dependencies are clearly identified
+
+#### Template Structure for All Checklists
+```markdown
+## [Phase/Process] Checklist
+
+### [Category]
+- [ ] [Specific actionable item] (Owner: [Role], Due: [Timeline])
+  - **Success Criteria**: [How to verify completion]
+  - **Dependencies**: [What must be done first]
+  - **Resources**: [Tools, documents, or support needed]
+
+### Validation Checkpoint
+- [ ] All items in this checklist completed and verified
+- [ ] Stakeholder sign-off obtained
+- [ ] Ready to proceed to next phase
+```
 
 ## Technology and Tools Integration
 
