@@ -71,13 +71,13 @@ A complete project at `/Users/dawiddutoit/projects/play/{PROJECT_NAME}/` with ev
 - [ ] Ensure user knows where to find MCP management tools (~/projects/play/mcp_management/)
 
 ### Phase 3: AI Agent Creation
-- [ ] Create planner.md agent with project-specific context
-- [ ] Generate project.plan.md using the planner agent
-- [ ] Generate specialized development agents based on project type:
-  - [ ] Frontend developer (if applicable)
-  - [ ] Backend developer (if applicable) 
-  - [ ] Integration specialist (for API/service integrations)
-  - [ ] DevOps engineer for deployment and monitoring
+- [ ] Use prompter system composer to generate planner.md agent from archetype
+- [ ] Generate project.plan.md using the created planner agent
+- [ ] Use composer to generate specialized development agents based on project type:
+  - [ ] Backend developer (for API/Python/Node.js projects)
+  - [ ] Frontend developer (for web applications)
+  - [ ] DevOps engineer (for deployment and monitoring)
+  - [ ] Additional specialists based on project requirements
 - [ ] Ensure each agent has project-specific knowledge and context
 - [ ] Configure agent integration points and handoff workflows
 
@@ -275,26 +275,95 @@ Creates project foundations with directory structure, configuration files, and s
 2. **Template Selection**: Choose appropriate base templates and components
 3. **Directory Creation**: Set up complete project structure at `/Users/dawiddutoit/projects/play/{PROJECT_NAME}`
 4. **Project Idea Documentation**: Generate project.idea.md with user requirements and vision
-5. **Agent Generation**: Create specialized AI agents tailored to the project
-6. **Project Plan Generation**: Use planner agent to create project.plan.md from project.idea.md
+5. **Agent Generation**: Use prompter system composer to create specialized AI agents from archetypes
+6. **Project Plan Generation**: Use generated planner agent to create project.plan.md from project.idea.md
 7. **Git Repository Setup**: Initialize git with initial commit
 8. **Documentation**: Generate README with clear next steps
 9. **Completion Guidance**: Provide specific next commands to run
 
 **Key Output**: Complete project with specialized AI agents ready for development at `/Users/dawiddutoit/projects/play/{PROJECT_NAME}`
 
+## Agent Creation Implementation
+
+### Step-by-Step Agent Generation Process
+
+When creating agents for a new project, follow this exact sequence:
+
+#### 1. Determine Required Agents by Project Type
+```python
+def get_required_agents(project_type: str, tech_stack: dict) -> List[str]:
+    """Determine which agents are needed based on project requirements"""
+    base_agents = ["planner"]  # Always needed
+    
+    if project_type in ["web_app", "api_service"]:
+        base_agents.append("backend_developer")
+    
+    if project_type in ["web_app", "frontend_app"]:
+        base_agents.append("frontend_developer")
+    
+    if project_type in ["web_app", "api_service", "enterprise"]:
+        base_agents.append("devops_engineer")
+    
+    # Add technology-specific agents
+    if tech_stack.get("backend") == "python":
+        # backend_developer archetype handles Python
+        pass
+    
+    if "slack" in project_type.lower():
+        base_agents.append("slack_developer")
+    
+    return base_agents
+```
+
+#### 2. Generate Each Agent Using Composer
+```bash
+# For each required agent, use the composer:
+.claude/commands/system/compose.md --config archetypes/{AGENT_NAME}.yaml --output {PROJECT_DIR}/.claude/commands/{AGENT_NAME}.md --project-root {PROJECT_DIR}
+```
+
+#### 3. Validate Agent Generation
+After generating each agent:
+- Verify the agent file exists in the project's `.claude/commands/` directory
+- Check that project-specific parameters were properly substituted
+- Ensure the agent has project context and appropriate capabilities
+
+### Project Type to Agent Mapping
+
+**Web Application Projects:**
+- planner.yaml → planner.md
+- backend_developer.yaml → backend_developer.md  
+- frontend_developer.yaml → frontend_developer.md
+- devops_engineer.yaml → devops_engineer.md
+
+**API Service Projects:**
+- planner.yaml → planner.md
+- backend_developer.yaml → backend_developer.md
+- devops_engineer.yaml → devops_engineer.md
+
+**Python Agent Projects (like Smith):**
+- planner.yaml → planner.md
+- backend_developer.yaml → backend_developer.md (configured for Python)
+- devops_engineer.yaml → devops_engineer.md
+- Additional specialized agents may be manually created for unique requirements
+
+**Slack Application Projects:**
+- planner.yaml → planner.md
+- slack_developer.yaml → slack_developer.md
+- backend_developer.yaml → backend_developer.md
+- devops_engineer.yaml → devops_engineer.md
+
 ## Critical Implementation Notes
 
 ### Creating project.plan.md During Project Setup
 
-**IMPORTANT**: Every new project MUST include both project.idea.md AND project.plan.md files. Here's the process:
+**IMPORTANT**: Every new project MUST include both project.idea.md AND project.plan.md files. Here's the proper process using the prompter system:
 
 1. **Create project.idea.md** - Capture user requirements and vision
-2. **Generate planner agent** - Use the composer to create .claude/commands/planner.md:
+2. **Generate planner agent** - Use the prompter system composer:
    ```bash
    .claude/commands/system/compose.md --config archetypes/planner.yaml --output {PROJECT_DIR}/.claude/commands/planner.md --project-root {PROJECT_DIR}
    ```
-3. **Execute planner agent** - Run the planner to generate project.plan.md:
+3. **Execute planner agent** - Run the generated planner to create project.plan.md:
    ```bash
    cd {PROJECT_DIR} && .claude/commands/planner.md
    ```
@@ -303,6 +372,23 @@ Creates project foundations with directory structure, configuration files, and s
 This ensures that every new project has both:
 - **project.idea.md**: User requirements and vision
 - **project.plan.md**: Technical configuration and architecture decisions
+
+### Agent Generation Process
+
+**CRITICAL**: Use the prompter system's composer for all agent generation:
+
+1. **Identify Required Agents** - Based on project type and requirements
+2. **Use Composer for Each Agent** - Generate from appropriate archetypes:
+   ```bash
+   # Generate core agents
+   .claude/commands/system/compose.md --config archetypes/planner.yaml --output {PROJECT_DIR}/.claude/commands/planner.md --project-root {PROJECT_DIR}
+   .claude/commands/system/compose.md --config archetypes/backend_developer.yaml --output {PROJECT_DIR}/.claude/commands/backend_developer.md --project-root {PROJECT_DIR}
+   .claude/commands/system/compose.md --config archetypes/devops_engineer.yaml --output {PROJECT_DIR}/.claude/commands/devops_engineer.md --project-root {PROJECT_DIR}
+   
+   # Generate project-specific agents as needed
+   .claude/commands/system/compose.md --config archetypes/frontend_developer.yaml --output {PROJECT_DIR}/.claude/commands/frontend_developer.md --project-root {PROJECT_DIR}
+   ```
+3. **Validate Agent Creation** - Ensure all agents are properly generated and project-aware
 
 ## Project Templates
 
